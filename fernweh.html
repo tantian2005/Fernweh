@@ -69,13 +69,13 @@ button:active{transform:scale(.97)}.tile:hover{transform:translateY(-2px)}
 @media(min-width:821px) and (max-width:1100px){#panel{width:340px}#ybar{right:372px}}
 /* phone + tablet portrait: bottom sheet (height set by JS, see snaps()) */
 @media(max-width:820px) and (orientation:portrait),(max-width:820px) and (min-height:521px){
-#panel{left:8px;right:8px;top:auto;bottom:calc(8px + var(--sb) + var(--kb));width:auto;height:var(--sh);transition:height .28s cubic-bezier(.3,.8,.3,1)}
+#panel{left:8px;right:8px;top:auto;bottom:calc(8px + var(--kb));width:auto;height:var(--sh);transition:height .28s cubic-bezier(.3,.8,.3,1)}
 #grip{display:grid}#tabs{margin:0 12px 10px;touch-action:none}#pb{overscroll-behavior:contain}
 #brand{top:calc(8px + var(--st));left:8px;padding:9px 14px}
 #ybar{top:calc(8px + var(--st));left:112px;right:8px;justify-content:flex-end}
-#zoom{left:8px;bottom:calc(var(--sh) + 16px + var(--sb) + var(--kb))}#lyp{left:62px;bottom:calc(var(--sh) + 16px + var(--sb) + var(--kb));max-width:calc(100vw - 70px)}
+#zoom{left:8px;bottom:calc(var(--sh) + 16px + var(--kb))}#lyp{left:62px;bottom:calc(var(--sh) + 16px + var(--kb));max-width:calc(100vw - 70px)}
 #toast{top:calc(56px + var(--st));bottom:auto;transform:translate(-50%,-20px);max-width:calc(100vw - 24px)}
-#attr{left:auto;right:12px;bottom:calc(var(--sh) + 12px + var(--sb) + var(--kb));max-width:calc(100% - 80px);text-align:right}}
+#attr{left:auto;right:12px;bottom:calc(var(--sh) + 12px + var(--kb));max-width:calc(100% - 80px);text-align:right}}
 /* landscape phone: side panel, respecting the notch */
 @media(max-height:520px) and (orientation:landscape){#panel{width:min(320px,46vw);top:8px;bottom:8px;right:max(8px,env(safe-area-inset-right,0px))}#brand{top:8px;left:max(8px,env(safe-area-inset-left,0px));padding:8px 12px}#ybar{top:8px;left:110px;right:calc(min(320px,46vw) + 20px);justify-content:flex-end}#zoom{bottom:8px;left:max(8px,env(safe-area-inset-left,0px))}#zoom button{width:38px!important;height:38px!important}#lyp{bottom:8px;left:calc(max(8px,env(safe-area-inset-left,0px)) + 46px);max-height:calc(100vh - 16px)}#attr{display:none}}
 /* touch */
@@ -104,7 +104,7 @@ button:active{transform:scale(.97)}.tile:hover{transform:translateY(-2px)}
 #zoom,#lyp,#attr{transition:bottom .28s cubic-bezier(.3,.8,.3,1),opacity .18s,transform .18s}
 .shd #panel,.shd #zoom,.shd #lyp,.shd #attr{transition:opacity .18s,transform .18s}
 #zoom.ovh,#lyp.ovh,#attr.ovh{opacity:0;pointer-events:none;transform:translateY(8px)}
-#zoom.hz{flex-direction:row}
+
 #lyp{z-index:3;overflow-y:auto}
 
 /* year picker: pills on wide screens, checkbox dropdown on small ones */
@@ -230,7 +230,7 @@ input:focus,textarea:focus,select:focus{outline:0;background:var(--lg-card);box-
 #ysel{border-radius:999px}#ysel:hover{background:var(--lg-c)}#ymenu{border-radius:24px}#ymenu button{border-radius:18px;background:none}#ymenu button:hover{background:var(--lg-f)}#ymenu button.on{background:rgba(245,166,35,.16)}
 #lyp{border-radius:24px;padding:6px}#lyp button{border-radius:18px;background:none}#lyp button:hover{background:var(--lg-f)}#lyp button.on,.bl button.on{color:var(--at);background:rgba(245,166,35,.16)}
 #brand{border-radius:999px}#zoom{border-radius:26px}#zoom button{background:none;border-radius:0}#zoom button:hover{background:var(--lg-f)}
-#zoom button+button{border-top:.5px solid var(--lg-r)}#zoom.hz button+button{border-top:0;border-left:.5px solid var(--lg-r)}
+#zoom button+button{border-top:.5px solid var(--lg-r)}
 .chips span{border:0;background:var(--lg-f);box-shadow:inset 0 0 0 .5px var(--lg-r)}
 .sw{background:var(--lg-f);box-shadow:inset 0 0 0 .5px var(--lg-r),inset 0 1px 3px rgba(0,0,0,.14)}.sw.on{background:linear-gradient(180deg,#ffc454,#f59e0b)}.sw::after{box-shadow:0 2px 6px rgba(0,0,0,.28),inset 0 1px 0 #fff;transition:left .3s var(--lg-spring)}
 .tier{border-radius:999px}.lab{border-radius:999px}
@@ -360,8 +360,8 @@ body{font-family:-apple-system,"SF Pro Text","PingFang SC","Segoe UI Variable Te
 /* section headers in plain capitalisation, not spaced capitals */
 .sec{font-size:13px;font-weight:600;letter-spacing:0;text-transform:none}
 /* zoom and view controls are two groups */
-#zoom{display:flex;flex-direction:column;gap:8px;overflow:visible;border-radius:0;background:none}#zoom.hz{flex-direction:row}
-.zg{display:flex;flex-direction:column;overflow:hidden;border-radius:26px}#zoom.hz .zg{flex-direction:row}#zoom button{color:var(--tx)}#zoom button svg{width:19px;height:19px}
+#zoom{display:flex;flex-direction:column;gap:8px;overflow:visible;border-radius:0;background:none}
+.zg{display:flex;flex-direction:column;overflow:hidden;border-radius:26px}#zoom button{color:var(--tx)}#zoom button svg{width:19px;height:19px}
 /* one layer of glass at a time: dialogs sit on a plain dimmed backdrop */
 #pc,#sc,#lang{-webkit-backdrop-filter:none;backdrop-filter:none}
 /* inner corners stay concentric with the 34px panel and its 14px padding */
@@ -396,7 +396,12 @@ body{font-family:-apple-system,"SF Pro Text","PingFang SC","Segoe UI Variable Te
 @media(min-width:821px){#brand,#ybar{top:calc(16px + var(--st))}#panel{top:calc(16px + var(--st));bottom:calc(16px + var(--sb))}#zoom,#lyp{bottom:calc(16px + var(--sb))}#attr{bottom:calc(3px + var(--sb))}#toast{bottom:calc(24px + var(--sb))}#demob{top:calc(66px + var(--st))}#tour{bottom:calc(16px + var(--sb))}#tour.t{top:calc(16px + var(--st));bottom:auto}}
 @media(max-height:520px) and (orientation:landscape){#brand,#ybar{top:calc(8px + var(--st))}#panel{top:calc(8px + var(--st));bottom:calc(8px + var(--sb))}#zoom,#lyp{bottom:calc(8px + var(--sb))}#demob{top:calc(8px + var(--st))}#tour,#tour.t,#tour.b{bottom:calc(8px + var(--sb))}}
 input[type=date]{-webkit-appearance:none;appearance:none;display:block;box-sizing:border-box;width:100%;min-width:0;max-width:100%;min-height:44px;line-height:1.3;text-align:left}input[type=date]::-webkit-date-and-time-value{text-align:left;min-height:1.3em}input[type=date]::-webkit-datetime-edit{padding:0}.bpd{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}.bpd label>input{margin-top:5px}
-html.vpf{height:var(--fullh)}html.vpf body{position:relative;width:100%;height:var(--fullh);transform:translate(0,0);overflow:hidden}html.vpf #map{height:100%}html.vpf.vpb,html.vpf.vpb body{overflow:visible}
+@media(max-width:820px) and (orientation:portrait),(max-width:820px) and (min-height:521px){#panel{border-radius:40px 40px var(--sc) var(--sc);--sc:max(28px,min(53px,calc(var(--sb)*2)))}#tabs{margin:6px 17px 10px;min-height:62px;align-items:stretch}.kb #panel{border-radius:40px}}
+@media(max-width:820px) and (orientation:portrait),(max-width:820px) and (min-height:521px){#ybar{transition:opacity .2s}.sf #ybar{opacity:0}.sf #ybar,.sf #ybar *{pointer-events:none}}
+@media(max-width:820px) and (orientation:portrait),(max-width:820px) and (min-height:521px),(max-height:520px) and (orientation:landscape){#zoom .zg:first-child{display:none}}
+*{touch-action:manipulation}
+@media(pointer:coarse){input,select,textarea{font-size:16px!important}}
+html.vpf{height:var(--fullh)}html.vpf body{position:relative;width:100%;height:var(--fullh);transform:translate(0,0);overflow:hidden}html.vpf #map{height:100%}
 html.iosapp .tint{display:none}
 </style></head><body>
 <div id="boot"><b>Fern<i>weh</i></b><span></span><small id="bootm"></small></div><script>(function(){var l='';try{l=localStorage.getItem('fernweh.lang')||((JSON.parse(localStorage.getItem('fernweh.v1'))||{}).set||{}).lang||''}catch(e){}if(!l)l=/^zh/.test(navigator.language||'')?'zh':'en';document.getElementById('bootm').textContent=l==='zh'?'正在载入城市数据…':'Loading city data…';addEventListener('load',function(){var b=document.getElementById('boot');if(!b)return;b.classList.add('off');setTimeout(function(){b.remove()},320)})})()</script>
@@ -822,9 +827,9 @@ const touch=()=>{refresh();rb();req()};
 const minS=()=>Math.max(H,W*.55),clamp=()=>{V.s=Math.max(minS(),Math.min(1.2e6,V.s));V.cx=((V.cx%1)+1)%1;V.cy=Math.max(H/2/V.s,Math.min(1-H/2/V.s,V.cy))};
 const lvhProbe=document.createElement('div');lvhProbe.style.cssText='position:fixed;top:0;left:0;width:0;height:100lvh;visibility:hidden;pointer-events:none';document.body.appendChild(lvhProbe);
 const IOSAPP=(/iPhone|iPod|iPad/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1))&&(navigator.standalone===true||matchMedia('(display-mode:standalone)').matches);
-let vpGap=0,VPM='a';try{VPM=localStorage.getItem('fernweh.vpm')||'a'}catch(_){}const VH=()=>innerHeight+vpGap;
+let vpGap=0,vpFull=0,vpKey='';const VH=()=>vpGap?vpFull:innerHeight;
 const safeTop=()=>{const e=document.createElement('div');e.style.cssText='position:fixed;visibility:hidden;padding-top:env(safe-area-inset-top,0px)';document.body.appendChild(e);const n=parseFloat(getComputedStyle(e).paddingTop)||0;e.remove();return n};
-function vpFit(on=IOSAPP,st=on?safeTop():0){const r=document.documentElement;r.classList.toggle('iosapp',on);if(!on)return;const a=Math.max(screen.width,screen.height),b=Math.min(screen.width,screen.height),por=innerHeight>innerWidth,fullW=por?b:a,fullH=por?a:b,vv=window.visualViewport,typing=vv&&vv.height<innerHeight-80;if(typing)return;const g=fullH-innerHeight,gap=VPM!=='c'&&st>0&&innerWidth===fullW&&g>0&&g<=100?g:0;vpGap=gap;r.classList.toggle('vpf',gap>0);r.classList.toggle('vpb',VPM==='b');if(gap)r.style.setProperty('--fullh',fullH+'px');else r.style.removeProperty('--fullh')}
+function vpFit(on=IOSAPP,st=on?safeTop():0){const r=document.documentElement;r.classList.toggle('iosapp',on);if(!on)return;const a=Math.max(screen.width,screen.height),b=Math.min(screen.width,screen.height),por=innerHeight>innerWidth,fullW=por?b:a,fullH=por?a:b,vv=window.visualViewport,typing=vv&&vv.height<innerHeight-80,key=por?'p':'l';if(typing||(vpGap&&key===vpKey&&fullH===vpFull))return;if(vpGap){r.classList.remove('vpf');r.style.removeProperty('--fullh');vpGap=0}const g=fullH-innerHeight,gap=st>0&&innerWidth===fullW&&g>0&&g<=100?g:0;vpGap=gap;vpFull=fullH;vpKey=key;r.classList.toggle('vpf',gap>0);if(gap)r.style.setProperty('--fullh',fullH+'px')}
 vpFit();addEventListener('scroll',()=>{if(!vpGap||!scrollY)return;const v=window.visualViewport;if(!(v&&v.height<innerHeight-80))scrollTo(0,0)},{passive:true});
 const size=()=>{vpFit();const nd=Math.min(devicePixelRatio||1,2),nw=innerWidth,nh=vpGap?VH():Math.max(innerHeight,lvhProbe.offsetHeight);if(nd===dpr&&nw===W&&nh===H)return;dpr=nd;W=nw;H=nh;M=Math.round(Math.min(W,H)*.2);cv.width=W*dpr;cv.height=H*dpr;const vb=Math.round(384*Math.min(dpr,2));if(vb!==VTB){VTB=vb;VT.clear();VO.clear();vtPool.length=0;voPool.length=0}SPR.clear();clamp();rb();draw()};{let rz=0;addEventListener('resize',()=>{cancelAnimationFrame(rz);rz=requestAnimationFrame(size)})}
 V.s=Math.max(innerWidth*1.15,innerHeight*1.4);size();
@@ -945,7 +950,7 @@ ${IMSG?`<p class="sm" style="margin-top:10px;color:var(--at);line-height:1.5">${
 <details class="dfmt"><summary>${tr('支持的文件格式','Supported file formats')}</summary><p>${tr('JSON：cities 列表，每条含英文城市名 name、国家代码 country（如 JP）、可选 visits（日期数组）、notes、wishlist、lat/lon。CSV：列 name, country, visits（多个日期用 ; 分隔）, notes, status。也可直接导入中文表头「地点、国家/地区、日期」的表格，同一城市的多行会自动合并。','JSON: a cities list with English name, ISO country code (e.g. JP), optional visits (date array), notes, wishlist, lat/lon. CSV: columns name, country, visits (dates separated by ;), notes, status. Chinese column headers also work; rows for the same city are merged.')}</p></details>
 <input type="file" id="fim" accept=".json,.csv,application/json,text/csv" hidden></div><button class="dg dclr" data-a="clr">${tr('清空所有数据','Delete all data')}</button>
 `,lab:()=>`<div class="card"><p class="mut sm" style="line-height:1.6">${tr('实验性功能，可能随时调整。实验室的功能可能在之后的版本被删除。','Experimental features that may change at any time. Lab features may be removed in a later version.')}</p>${tg('labBadge','无照片时显示徽章','Badges instead of placeholders',['没有照片的城市使用矢量徽章，并在详情页开放「徽章图案」选择','Cities without a photo use a vector badge; the detail page gets a badge-scene picker'])}</div>${S.set.labBadge?`<div class="sec"><span>${tr('徽章样式','Badge style')}</span></div><div class="card"><div class="bsg">${Object.entries(BSTY).map(([k,v])=>`<button class="bs ${S.set.badge===k?'on':''}" data-a="bsty" data-v="${k}"><img src="${svg(VL[0]||C.find(c=>c[1]==='Paris'&&c[2]==='FR'),k)}">${v[L==='zh'?1:2]}</button>`).join('')}</div></div>
-`:''}<div class="sec"><span>${tr('照片','Photos')}</span></div>${pg.photos()}`,install:()=>`<div class="card sm" style="line-height:1.65">${standalone()?tr('Fernweh 已经从主屏幕全屏运行，状态栏与地图同色。','Fernweh is already running full screen from your Home Screen, with the status bar matching the map.'):!/^http/.test(location.protocol)?tr('需要通过网址打开才能安装：把这个文件夹放到网站上（比如 GitHub Pages），再用手机打开。','Installing needs a web address: put this folder on a website such as GitHub Pages, then open it on your phone.'):/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.maxTouchPoints>1&&/Mac/.test(navigator.userAgent))?tr('在 Safari 里点「分享」，选择「添加到主屏幕」。之后从主屏幕打开，就没有浏览器栏了，状态栏也和地图同色。','In Safari, tap Share, then Add to Home Screen. Opened from there it has no browser bars, and the status bar matches the map.'):INST?tr('可以把 Fernweh 安装成独立的应用窗口。','You can install Fernweh as its own app window.'):tr('在浏览器菜单里选择「安装」或「添加到主屏幕」。','Choose Install or Add to Home Screen in your browser menu.')}</div>${INST&&!standalone()?`<button class="pri" data-a="inst">${tr('安装','Install')}</button>`:''}<p class="mut sm" style="margin:10px 4px 0;line-height:1.55">${tr('安装后可离线打开，看过的照片也会留在设备上；在线底图仍需联网。','Once installed it opens offline and keeps the photos you have viewed. Online basemaps still need a connection.')}</p>`,about:()=>`<div class="card sm mut" style="line-height:1.7">Fernweh · ${C.length.toLocaleString()} ${tr('座城市','cities')}<br>${tr('城市数据：GeoNames（CC BY 4.0）、Wikidata（CC0）；中国县市级区划：国家统计局 2020；边界：Natural Earth；在线底图：Esri','Cities: GeoNames (CC BY 4.0), Wikidata (CC0) · China divisions: NBS 2020 · Borders: Natural Earth · Online maps: Esri')}<br>${tr('快捷键：/ 搜索，Esc 返回','Shortcuts: / search · Esc back')}${IOSAPP?`<br>${tr('视口','Viewport')} ${innerWidth}×${innerHeight} · ${tr('屏幕','Screen')} ${screen.width}×${screen.height} · ${tr('安全区','Inset')} ${safeTop()} · ${tr('修正','Fix')} ${vpGap}<br><button data-a="vpm" style="margin-top:8px;padding:8px 14px">${tr('全屏方案','Full screen method')} ${VPM.toUpperCase()} · ${tr('点击切换','tap to change')}</button>`:''}</div><div class="sec"><span>${tr('照片来源','Photo credits')}</span><span>${Object.keys(BP).length}</span></div><div class="card sm mut" style="line-height:1.7"><details><summary style="cursor:pointer">${tr('展开名单（作者 · 许可证）','Show list (author · licence)')}</summary>${Object.keys(BP).map(i=>byId.get(+i)).filter(Boolean).map(c=>{const b=BP[c[0]];return`<div>${esc(dn(c).split(',')[0])} — ${esc(b.a||'—')} · ${/^https:\/\//.test(b.p||'')?`<a href="${esc(b.p)}" target="_blank" rel="noopener noreferrer" style="color:var(--blue)">${esc(b.l||tr('来源','Source'))}</a>`:esc(b.l||'')}</div>`}).join('')}</details></div>`};
+`:''}<div class="sec"><span>${tr('照片','Photos')}</span></div>${pg.photos()}`,install:()=>`<div class="card sm" style="line-height:1.65">${standalone()?tr('Fernweh 已经从主屏幕全屏运行，状态栏与地图同色。','Fernweh is already running full screen from your Home Screen, with the status bar matching the map.'):!/^http/.test(location.protocol)?tr('需要通过网址打开才能安装：把这个文件夹放到网站上（比如 GitHub Pages），再用手机打开。','Installing needs a web address: put this folder on a website such as GitHub Pages, then open it on your phone.'):/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.maxTouchPoints>1&&/Mac/.test(navigator.userAgent))?tr('在 Safari 里点「分享」，选择「添加到主屏幕」。之后从主屏幕打开，就没有浏览器栏了，状态栏也和地图同色。','In Safari, tap Share, then Add to Home Screen. Opened from there it has no browser bars, and the status bar matches the map.'):INST?tr('可以把 Fernweh 安装成独立的应用窗口。','You can install Fernweh as its own app window.'):tr('在浏览器菜单里选择「安装」或「添加到主屏幕」。','Choose Install or Add to Home Screen in your browser menu.')}</div>${INST&&!standalone()?`<button class="pri" data-a="inst">${tr('安装','Install')}</button>`:''}<p class="mut sm" style="margin:10px 4px 0;line-height:1.55">${tr('安装后可离线打开，看过的照片也会留在设备上；在线底图仍需联网。','Once installed it opens offline and keeps the photos you have viewed. Online basemaps still need a connection.')}</p>`,about:()=>`<div class="card sm mut" style="line-height:1.7">Fernweh · ${C.length.toLocaleString()} ${tr('座城市','cities')}<br>${tr('城市数据：GeoNames（CC BY 4.0）、Wikidata（CC0）；中国县市级区划：国家统计局 2020；边界：Natural Earth；在线底图：Esri','Cities: GeoNames (CC BY 4.0), Wikidata (CC0) · China divisions: NBS 2020 · Borders: Natural Earth · Online maps: Esri')}<br>${tr('快捷键：/ 搜索，Esc 返回','Shortcuts: / search · Esc back')}</div><div class="sec"><span>${tr('照片来源','Photo credits')}</span><span>${Object.keys(BP).length}</span></div><div class="card sm mut" style="line-height:1.7"><details><summary style="cursor:pointer">${tr('展开名单（作者 · 许可证）','Show list (author · licence)')}</summary>${Object.keys(BP).map(i=>byId.get(+i)).filter(Boolean).map(c=>{const b=BP[c[0]];return`<div>${esc(dn(c).split(',')[0])} — ${esc(b.a||'—')} · ${/^https:\/\//.test(b.p||'')?`<a href="${esc(b.p)}" target="_blank" rel="noopener noreferrer" style="color:var(--blue)">${esc(b.l||tr('来源','Source'))}</a>`:esc(b.l||'')}</div>`}).join('')}</details></div>`};
 if(SP===null||!pg[SP]){el.innerHTML=bkCard()+SPG.map(([gz,ge,ks])=>`<div class="sec"><span>${tr(gz,ge)}</span></div><div class="card sgp">${ks.map(k=>{const m=SPM.find(x=>x[0]===k),act=k==='demo'?`data-a="demo"`:`data-a="sp" data-v="${k}"`,ttl=k==='demo'&&DEMO?tr('退出演示','Exit demo'):tr(m[1],m[2]);return`<div class="li sp" ${act}><span class="spi"><svg class="ic" viewBox="0 0 24 24">${SPI[k]}</svg></span><div class="g"><b>${ttl}${k==='lab'?'<span class="lab">LAB</span>':''}</b><small>${esc(spSub(k))}</small></div><span class="mut">›</span></div>`}).join('')}</div>`).join('')}
 else{const m=SPM.find(x=>x[0]===SP);el.innerHTML=`<div class="hh"><button class="bk" data-a="spback">‹ ${tr('设置','Settings')}</button><b class="sph">${tr(m[1],m[2])}</b><span style="width:70px"></span></div>`+pg[SP]()}}
 /* city detail */
@@ -1037,7 +1042,7 @@ function toCSV(){const q=s=>'"'+String(s==null?'':s).replace(/"/g,'""')+'"';cons
  VLA.forEach(c=>row(c,S.v[c[0]]));WL.forEach(c=>row(c,null));return'\ufeff'+r.join('\r\n')}
 let IM='merge',pcLogIn=null;
 el.onclick=e=>{const g=e.target.closest('[data-a]');if(!g)return;const a=g.dataset.a,v=g.dataset.v,k=g.dataset.k;
-switch(a){case'vpm':try{localStorage.setItem('fernweh.vpm',{a:'b',b:'c',c:'a'}[VPM])}catch(_){}location.reload();break;case'open':open(+v);break;case'back':closeDetail();break;
+switch(a){case'open':open(+v);break;case'back':closeDetail();break;
 case'mark':S.v[SEL]={d:today(),n:''};delete S.w[SEL];save();touch();render();break;
 case'wish':if(S.w[SEL])delete S.w[SEL];else S.w[SEL]=1;save();touch();render();break;
 case'dadd':{const vv=S.v[SEL];setDates(vv,[...dates(vv),today()]);render();break}
@@ -1193,11 +1198,11 @@ let shs='h',shPx=0,KB=0,sd=null;
 const panelGap=()=>parseFloat(getComputedStyle(panelEl).bottom)||8;
 const brandBottom=()=>$('#brand').getBoundingClientRect().bottom;
 function snaps(){const t=$('#tabs'),f=Math.round(VH()-panelGap()-brandBottom()-8),p=$('#grip').offsetHeight+t.offsetHeight+16;return{p,h:Math.min(f,Math.max(p,Math.round((VH()-KB)*.46))),f}}
-function zfit(){const z=$('#zoom'),ly=$('#lyp'),at=$('#attr');if(!mob()){[z,ly,at].forEach(e=>e.classList.remove('ovh','hz'));z.classList.remove('hz');ly.style.maxHeight='';ly.style.left=ly.style.bottom='';return}
- const top=VH()-panelGap()-shPx,room=top-16-brandBottom()-8,bh=z.querySelector('button').offsetHeight,vert=room>=bh*4+8,row=!vert&&room>=bh,hide=!vert&&!row;
- z.classList.toggle('hz',row);[z,ly].forEach(e=>e.classList.toggle('ovh',hide));at.classList.toggle('ovh',top<brandBottom()+40);if(hide)ly.classList.remove('show');
- ly.style.left=row?'8px':'';ly.style.bottom=row?`calc(var(--sh) + 24px + var(--sb) + var(--kb) + ${bh}px)`:'';ly.style.maxHeight=Math.max(120,(row?top-16-bh-8:top-8)-16)+'px'}
-function applySheet(px){shPx=px;rootEl.style.setProperty('--sh',px+'px');rootEl.classList.toggle('pk',mob()&&px<snaps().p+28);rootEl.classList.toggle('sf',mob()&&px>=snaps().f-8);zfit()}
+function zfit(){const z=$('#zoom'),ly=$('#lyp'),at=$('#attr');if(!mob()){[z,ly,at].forEach(e=>e.classList.remove('ovh'));ly.style.maxHeight='';return}
+ const top=VH()-panelGap()-shPx,room=top-16-brandBottom()-8,hide=room<$('#th').offsetHeight*2;
+ [z,ly].forEach(e=>e.classList.toggle('ovh',hide));at.classList.toggle('ovh',top<brandBottom()+40);if(hide)ly.classList.remove('show');
+ ly.style.maxHeight=Math.max(120,top-24)+'px'}
+function applySheet(px){shPx=px;rootEl.style.setProperty('--sh',px+'px');rootEl.classList.toggle('pk',mob()&&px<snaps().p+28);const sf=mob()&&px>=snaps().f-8;rootEl.classList.toggle('sf',sf);if(sf)yMenu(false);zfit()}
 function setSheet(k){shs=k;applySheet(snaps()[k])}
 function layoutSheet(){if(mob())setSheet(shs);else{rootEl.style.removeProperty('--sh');rootEl.classList.remove('pk');shs='h';zfit()}}
 const mapFocus=()=>{if(mob()){const h=shs==='h'?shPx:snaps().h;return[0,(brandBottom()+VH()-KB-h-8)/2]}return[Math.max(0,innerWidth-panelEl.getBoundingClientRect().left),H/2]};
