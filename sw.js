@@ -1,7 +1,7 @@
 /* Pages and data: network first, so updates arrive at once and the cache is the offline fallback.
    Photos and fine borders never change: cache first, kept as they are viewed. Online map tiles are left alone. */
-const CACHE = 'fernweh-v7';
-const SHELL = ['fernweh.html', 'data/cities.js?v=6', 'data/photos.js?v=2', 'manifest.webmanifest', 'icons/icon-192.png'];
+const CACHE = 'fernweh-v9';
+const SHELL = ['fernweh.html', 'data/cities.js?v=6', 'data/photos.js?v=4', 'manifest.webmanifest', 'icons/icon-192.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
