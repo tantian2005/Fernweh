@@ -1,29 +1,58 @@
-/* Pages and data: network first, so updates arrive at once and the cache is the offline fallback.
-   Photos and fine borders never change: cache first, kept as they are viewed. Online map tiles are left alone. */
-const CACHE = 'fernweh-v9';
-const SHELL = ['fernweh.html', 'data/cities.js?v=6', 'data/photos.js?v=4', 'manifest.webmanifest', 'icons/icon-192.png'];
+/* The page: network first (with a short wait), so updates arrive at once and the cache covers slow or no signal.
+   Versioned data (?v=N) never changes under the same address: cache first.
+   Photos and fine borders live in their own cache that updates never clear. Online map tiles are left alone. */
+const CACHE = 'fernweh-v10';
+const MEDIA = 'fernweh-media';
+const SHELL = ['fernweh.html', 'data/cities.js?v=7', 'data/photos.js?v=5', 'manifest.webmanifest', 'icons/icon-192.png'];
+const isMedia = url => url.pathname.includes('/png/') || url.pathname.includes('/data/geo/');
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
 });
 
+/* keep photos already viewed: move them out of older page caches before those are dropped */
 self.addEventListener('activate', e => {
-  e.waitUntil(caches.keys()
-    .then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))
-    .then(() => self.clients.claim()));
+  e.waitUntil((async () => {
+    const media = await caches.open(MEDIA);
+    for (const k of await caches.keys()) {
+      if (k === CACHE || k === MEDIA) continue;
+      const old = await caches.open(k);
+      for (const req of await old.keys()) {
+        if (isMedia(new URL(req.url)) && !(await media.match(req))) {
+          const res = await old.match(req);
+          if (res) await media.put(req, res);
+        }
+      }
+      await caches.delete(k);
+    }
+    await self.clients.claim();
+  })());
 });
 
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
   if (e.request.method !== 'GET' || url.origin !== location.origin) return;
-  const store = res => {
-    if (res.ok) { const copy = res.clone(); caches.open(CACHE).then(c => c.put(e.request, copy)); }
+  const store = name => res => {
+    if (res.ok) { const copy = res.clone(); caches.open(name).then(c => c.put(e.request, copy)); }
     return res;
   };
-  if (url.pathname.includes('/png/') || url.pathname.includes('/data/geo/')) {
-    e.respondWith(caches.match(e.request).then(hit => hit || fetch(e.request).then(store)));
+  if (isMedia(url)) {
+    e.respondWith(caches.match(e.request).then(hit => hit || fetch(e.request).then(store(MEDIA))));
     return;
   }
-  e.respondWith(fetch(e.request).then(store).catch(() => caches.match(e.request)
-    .then(hit => hit || (e.request.mode === 'navigate' ? caches.match('fernweh.html') : Response.error()))));
+  if (url.searchParams.has('v')) {
+    e.respondWith(caches.match(e.request).then(hit => hit || fetch(e.request).then(store(CACHE))));
+    return;
+  }
+  const net = fetch(e.request).then(store(CACHE));
+  const fallback = () => caches.match(e.request)
+    .then(hit => hit || (e.request.mode === 'navigate' ? caches.match('fernweh.html') : undefined));
+  e.respondWith(new Promise(resolve => {
+    let done = false;
+    const finish = r => { if (!done && r) { done = true; resolve(r); } };
+    /* slow signal: show the cached page after 3s, the network copy still refreshes the cache */
+    const t = setTimeout(() => fallback().then(finish), 3000);
+    net.then(r => { clearTimeout(t); finish(r); })
+      .catch(() => { clearTimeout(t); fallback().then(r => { if (r) finish(r); else if (!done) { done = true; resolve(Response.error()); } }); });
+  }));
 });
