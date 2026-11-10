@@ -42,7 +42,7 @@ python -m http.server 8000
 | `fernweh.html` | 界面和全部程序 |
 | `data/cities.js` | 城市、中文名、国家边界和省州边界 |
 | `data/geo/` | 高精度边界，每个国家一个文件，放大时才加载 |
-| `data/photos.js`、`png/` | 城市照片和署名 |
+| `data/photos.js` | 城市照片的署名和地址。照片文件在单独的仓库 [fernweh-photos](https://github.com/tantian2005/fernweh-photos) |
 | `sw.js`、`manifest.webmanifest`、`icons/` | 离线缓存和安装到主屏幕 |
 
 ## 数据来源
@@ -51,4 +51,4 @@ python -m http.server 8000
 - 中国县市级区划：国家统计局 2020
 - 边界：[Natural Earth](https://www.naturalearthdata.com/)（公共领域）
 - 在线底图：Esri
-- 城市照片：来自维基百科等来源，署名见 `png/credits.csv` 和应用内的照片说明
+- 城市照片：来自维基百科等来源，署名见应用内的照片说明和关于页

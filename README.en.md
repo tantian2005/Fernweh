@@ -42,7 +42,7 @@ When you change `data/cities.js` or `data/photos.js`, also bump the version numb
 | `fernweh.html` | The interface and all of the code |
 | `data/cities.js` | Cities, Chinese names, country and province borders |
 | `data/geo/` | Detailed borders, one file per country, loaded only when you zoom in |
-| `data/photos.js`, `png/` | City photos and their credits |
+| `data/photos.js` | Credits and addresses of the city photos. The picture files are in their own repository, [fernweh-photos](https://github.com/tantian2005/fernweh-photos) |
 | `sw.js`, `manifest.webmanifest`, `icons/` | Offline cache and home screen install |
 
 ## Data sources
@@ -51,4 +51,4 @@ When you change `data/cities.js` or `data/photos.js`, also bump the version numb
 - Chinese county and city divisions: National Bureau of Statistics of China, 2020
 - Borders: [Natural Earth](https://www.naturalearthdata.com/) (public domain)
 - Online basemaps: Esri
-- City photos: from Wikipedia and other sources; credits are in `png/credits.csv` and in each photo's caption in the app
+- City photos: from Wikipedia and other sources; credits are in each photo's caption in the app and on the About page

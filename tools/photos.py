@@ -14,11 +14,18 @@ or a neighbouring town. Look at the sheets, then pass the ids to drop to "merge"
 After merging, run "node tools/split-cities.js" so every city with a photo is in data/core.js, and raise the ?v=
 numbers for core.js and rest.js in fernweh.html and sw.js. "merge" already raises photos.js and the cache name.
 
+The pictures are not in this repository. They live in the repository "fernweh-photos", checked out beside this one
+(../fernweh-photos, or the folder named in the environment variable FERNWEH_PHOTOS), and are served from its own
+GitHub Pages site; data/photos.js names that site in FW_PHOTO_BASE. After "merge", commit and push fernweh-photos
+first and wait for its site, then push this repository.
+
 Needs Python 3 with Pillow. Requests are batched and spaced out; Wikimedia answers 429 when asked too fast, and the
 script waits and tries again."""
 import io, json, os, re, sys, time, math, tempfile, collections, urllib.request, urllib.parse, urllib.error
 sys.stdout.reconfigure(encoding='utf-8')
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..') + os.sep
+PICS = os.path.join(os.environ.get('FERNWEH_PHOTOS') or os.path.join(ROOT, '..', 'fernweh-photos'), '') 
+BASE = "window.FW_PHOTO_BASE='https://tantian2005.github.io/fernweh-photos/';\n"
 UA = 'FernwehPhotoBuilder/1.1 (personal travel-map project; polite one-time download)'
 args = sys.argv[1:]
 cmd = args.pop(0) if args else ''
@@ -152,9 +159,9 @@ def fetch():
         try: im = Image.open(io.BytesIO(img)).convert('RGB')
         except Exception: res[cid] = {'skip': 'download failed'}; print('skip', r[6], 'download failed'); continue
         if im.width > 1024: im = im.resize((1024, round(im.height * 1024 / im.width)), Image.LANCZOS)
-        im.save(ROOT + f'png/{cid}.webp', 'WEBP', quality=78, method=5)
+        im.save(PICS + f'png/{cid}.webp', 'WEBP', quality=78, method=5)
         W, H = im.size; tw = min(W, H * 4 / 3); th = tw * 3 / 4
-        im.crop(((W - tw) / 2, (H - th) / 2, (W + tw) / 2, (H + th) / 2)).resize((480, 360), Image.LANCZOS).save(ROOT + f'png/thumb/{cid}.webp', 'WEBP', quality=72, method=6)
+        im.crop(((W - tw) / 2, (H - th) / 2, (W + tw) / 2, (H + th) / 2)).resize((480, 360), Image.LANCZOS).save(PICS + f'png/thumb/{cid}.webp', 'WEBP', quality=72, method=6)
         res[cid] = {'s': f'png/thumb/{cid}.webp', 'h': f'png/{cid}.webp', 't': title, 'p': ii.get('descriptionurl') or '', 'a': au, 'l': lic, 'zh': r[6], 'f': f}
         n += 1; print(f'[{n}] ok', r[6], lic, f[:60], flush=True)
         json.dump(res, open(OUT, 'w', encoding='utf-8'), ensure_ascii=False)
@@ -163,7 +170,7 @@ def fetch():
 
 def sheet():
     from PIL import Image, ImageDraw, ImageFont
-    ok = [(k, v) for k, v in load_new().items() if 's' in v and os.path.exists(ROOT + v['s'])]
+    ok = [(k, v) for k, v in load_new().items() if 's' in v and os.path.exists(PICS + v['s'])]
     W, H, C, per = 240, 180, 8, 48
     try: f = ImageFont.truetype('msyh.ttc', 13)
     except Exception: f = ImageFont.load_default()
@@ -172,7 +179,7 @@ def sheet():
         im = Image.new('RGB', (C * W, rows * (H + 20)), 'white'); d = ImageDraw.Draw(im)
         for i, (k, v) in enumerate(ch):
             x, y = (i % C) * W, (i // C) * (H + 20)
-            im.paste(Image.open(ROOT + v['s']).convert('RGB').resize((W - 4, H - 4)), (x + 2, y + 2)); d.text((x + 3, y + H - 1), f"{k[-5:]} {v.get('zh', '')} {v['t'][:14]}", fill='black', font=f)
+            im.paste(Image.open(PICS + v['s']).convert('RGB').resize((W - 4, H - 4)), (x + 2, y + 2)); d.text((x + 3, y + H - 1), f"{k[-5:]} {v.get('zh', '')} {v['t'][:14]}", fill='black', font=f)
         o = os.path.join(WORK, f'sheet{p // per}.jpg'); im.save(o, quality=82); print(o, len(ch))
 
 def merge():
@@ -181,14 +188,14 @@ def merge():
         if 's' not in v or k in P: continue
         if k in drop or any(k.endswith(x) and len(x) >= 5 for x in drop):
             for f in (v['s'], v['h']):
-                if os.path.exists(ROOT + f): os.remove(ROOT + f)
+                if os.path.exists(PICS + f): os.remove(PICS + f)
             continue
-        if os.path.exists(ROOT + v['s']) and os.path.exists(ROOT + v['h']): P[k] = {x: v[x] for x in ('s', 'h', 't', 'p', 'a', 'l')}
-    io.open(ROOT + 'data/photos.js', 'w', encoding='utf-8', newline='').write('window.FW_PHOTOS=' + json.dumps(P, ensure_ascii=False, separators=(',', ':')) + ';\n')
+        if os.path.exists(PICS + v['s']) and os.path.exists(PICS + v['h']): P[k] = {x: v[x] for x in ('s', 'h', 't', 'p', 'a', 'l')}
+    io.open(ROOT + 'data/photos.js', 'w', encoding='utf-8', newline='').write('window.FW_PHOTOS=' + json.dumps(P, ensure_ascii=False, separators=(',', ':')) + ';\n' + BASE)
     def bump(path, pat, fmt):
         t = rd(path); t2, k = re.subn(pat, lambda m: fmt % (int(m[1]) + 1), t); assert k >= 1, (path, pat)
         io.open(ROOT + path, 'w', encoding='utf-8', newline='').write(t2)
     bump('fernweh.html', r'photos\.js\?v=(\d+)', 'photos.js?v=%d'); bump('sw.js', r'photos\.js\?v=(\d+)', 'photos.js?v=%d'); bump('sw.js', r"CACHE = 'fernweh-v(\d+)'", "CACHE = 'fernweh-v%d'")
-    print('photos', n0, '->', len(P)); print('next: node tools/split-cities.js, then raise ?v= for core.js and rest.js')
+    print('photos', n0, '->', len(P)); print('next: node tools/split-cities.js, raise ?v= for core.js and rest.js; push fernweh-photos before this repository')
 
 {'fetch': fetch, 'sheet': sheet, 'merge': merge}.get(cmd, lambda: print(__doc__))()
