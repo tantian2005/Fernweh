@@ -1,7 +1,7 @@
 /* The page: network first (with a short wait), so updates arrive at once and the cache covers slow or no signal.
    Versioned data (?v=N) never changes under the same address: cache first.
    Photos and fine borders live in their own cache that updates never clear. Online map tiles are left alone. */
-const CACHE = 'fernweh-v13';
+const CACHE = 'fernweh-v14';
 const MEDIA = 'fernweh-media';
 const SHELL = ['fernweh.html', 'data/core.js?v=2', 'data/rest.js?v=2', 'data/photos.js?v=6', 'manifest.webmanifest', 'icons/icon-192.png'];
 const isMedia = url => url.pathname.includes('/png/') || url.pathname.includes('/data/geo/');
