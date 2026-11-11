@@ -3,6 +3,8 @@
   python tools/photos.py fetch  [--work DIR]            look up and download photos for the cities in tools/photos-cn.txt
   python tools/photos.py sheet  [--work DIR]            make contact sheets (sheet0.jpg, sheet1.jpg ...) to review by eye
   python tools/photos.py merge  [--work DIR] [id ...]   add the photos to data/photos.js; the ids listed are left out and deleted
+  python tools/photos.py take   ID="File name.jpg" ...    use one named Wikimedia Commons file for one city, anywhere in the world
+  python tools/photos.py credits                        write CREDITS.csv in the photo repository from data/photos.js
 
 How a photo is chosen: the Chinese Wikipedia page of the city gives its Wikidata item; the item must lie within
 90 km of the city in our data; its picture (P18) must be a JPEG at least 1000 px wide, wider than tall, with a free
@@ -11,8 +13,8 @@ licence (CC0, CC BY, CC BY-SA, public domain). The author and licence go into da
 Every batch needs a review before merging: Wikidata pictures of small places are often a railway station, a map,
 or a neighbouring town. Look at the sheets, then pass the ids to drop to "merge".
 
-After merging, run "node tools/split-cities.js" so every city with a photo is in data/core.js, and raise the ?v=
-numbers for core.js and rest.js in fernweh.html and sw.js. "merge" already raises photos.js and the cache name.
+After "merge" or "take", run "node tools/split-cities.js" so every city with a photo is in data/core.js, then
+"node tools/release.js", which raises the version numbers of whatever changed.
 
 The pictures are not in this repository. They live in the repository "fernweh-photos", checked out beside this one
 (../fernweh-photos, or the folder named in the environment variable FERNWEH_PHOTOS), and are served from its own
@@ -192,10 +194,38 @@ def merge():
             continue
         if os.path.exists(PICS + v['s']) and os.path.exists(PICS + v['h']): P[k] = {x: v[x] for x in ('s', 'h', 't', 'p', 'a', 'l')}
     io.open(ROOT + 'data/photos.js', 'w', encoding='utf-8', newline='').write('window.FW_PHOTOS=' + json.dumps(P, ensure_ascii=False, separators=(',', ':')) + ';\n' + BASE)
-    def bump(path, pat, fmt):
-        t = rd(path); t2, k = re.subn(pat, lambda m: fmt % (int(m[1]) + 1), t); assert k >= 1, (path, pat)
-        io.open(ROOT + path, 'w', encoding='utf-8', newline='').write(t2)
-    bump('fernweh.html', r'photos\.js\?v=(\d+)', 'photos.js?v=%d'); bump('sw.js', r'photos\.js\?v=(\d+)', 'photos.js?v=%d'); bump('sw.js', r"CACHE = 'fernweh-v(\d+)'", "CACHE = 'fernweh-v%d'")
-    print('photos', n0, '->', len(P)); print('next: node tools/split-cities.js, raise ?v= for core.js and rest.js; push fernweh-photos before this repository')
+    print('photos', n0, '->', len(P)); print('next: node tools/split-cities.js, node tools/release.js; push fernweh-photos before this repository')
 
-{'fetch': fetch, 'sheet': sheet, 'merge': merge}.get(cmd, lambda: print(__doc__))()
+def take():
+    """ID=File pairs: download each Commons file, write the two sizes, and put the credit straight into data/photos.js"""
+    from PIL import Image
+    picks = dict(a.split('=', 1) for a in args); P = photos()
+    q = api('commons.wikimedia.org', action='query', titles='|'.join('File:' + f for f in picks.values()), prop='imageinfo', iiprop='url|size|mime|extmetadata', iiurlwidth='1280').get('query', {})
+    fwd = {m['from']: m['to'] for m in q.get('normalized', [])}; pages = {p['title']: p for p in q.get('pages', [])}
+    free = re.compile(r'^(CC0|CC BY|CC-BY|Public domain|PD|Attribution)', re.I)
+    for cid, f in picks.items():
+        pg = pages.get(fwd.get('File:' + f, 'File:' + f)); ii = pg and (pg.get('imageinfo') or [None])[0]
+        if not ii: print(cid, 'file not found:', f); continue
+        m = ii.get('extmetadata', {}); lic = (m.get('LicenseShortName') or {}).get('value', '')
+        if not free.search(lic): print(cid, 'not a free licence:', lic); continue
+        au = re.sub(r'\s+', ' ', re.sub(r'<[^>]*>', '', (m.get('Artist') or {}).get('value', ''))).strip()[:80]
+        time.sleep(2.5); im = Image.open(io.BytesIO(get(ii.get('thumburl') or ii['url']))).convert('RGB')
+        if im.width > 1024: im = im.resize((1024, round(im.height * 1024 / im.width)), Image.LANCZOS)
+        im.save(PICS + f'png/{cid}.webp', 'WEBP', quality=80, method=5)
+        W, H = im.size; tw = min(W, H * 4 / 3); th = tw * 3 / 4
+        im.crop(((W - tw) / 2, (H - th) / 2, (W + tw) / 2, (H + th) / 2)).resize((480, 360), Image.LANCZOS).save(PICS + f'png/thumb/{cid}.webp', 'WEBP', quality=74, method=6)
+        P[cid] = {'s': f'png/thumb/{cid}.webp', 'h': f'png/{cid}.webp', 't': f, 'p': ii.get('descriptionurl') or '', 'a': au, 'l': lic}
+        print(cid, 'ok', lic, au)
+    io.open(ROOT + 'data/photos.js', 'w', encoding='utf-8', newline='').write('window.FW_PHOTOS=' + json.dumps(P, ensure_ascii=False, separators=(',', ':')) + ';\n' + BASE)
+    print('next: node tools/split-cities.js, node tools/release.js; push fernweh-photos before this repository')
+
+def credits():
+    import csv
+    P = photos(); out = PICS + 'CREDITS.csv'
+    with io.open(out, 'w', encoding='utf-8-sig', newline='') as fh:
+        w = csv.writer(fh); w.writerow(['id', 'page or file', 'file', 'author', 'licence', 'source'])
+        for k in sorted(P, key=lambda x: (not x.isdigit(), int(x) if x.isdigit() else 0, x)):
+            v = P[k]; w.writerow([k, v.get('t', ''), v.get('h', ''), v.get('a', ''), v.get('l', ''), v.get('p', '')])
+    print(out, len(P), 'rows')
+
+{'fetch': fetch, 'sheet': sheet, 'merge': merge, 'take': take, 'credits': credits}.get(cmd, lambda: print(__doc__))()

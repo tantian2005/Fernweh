@@ -1,7 +1,11 @@
 {
+  "id": "fernweh",
   "name": "Fernweh",
   "short_name": "Fernweh",
   "description": "Map the places you have been",
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "categories": ["travel", "lifestyle"],
   "start_url": "fernweh.html",
   "scope": "./",
   "display": "standalone",
@@ -10,5 +14,9 @@
   "icons": [
     {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
     {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ],
+  "shortcuts": [
+    {"name": "添加城市 Add a city", "short_name": "添加城市", "url": "fernweh.html?go=add", "icons": [{"src": "icons/icon-192.png", "sizes": "192x192"}]},
+    {"name": "足迹回放 Replay", "short_name": "足迹回放", "url": "fernweh.html?go=replay", "icons": [{"src": "icons/icon-192.png", "sizes": "192x192"}]}
   ]
 }

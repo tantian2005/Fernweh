@@ -1,0 +1,9 @@
+# local preview settings made while testing
+.claude/
+# Python and editor leftovers
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+# the old photo folder: photos live in the fernweh-photos repository
+/png/
