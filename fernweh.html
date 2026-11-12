@@ -156,22 +156,23 @@ button.bk{border:0;background:none;padding:6px 10px 6px 2px;color:var(--mut);min
 .seg.sm button{padding:5px 6px;font-size:12px;min-height:0}
 .tile{padding:0;overflow:hidden;border-radius:15px}.tile .pic{border-radius:0;box-shadow:none;margin:0}.tile b{margin:8px 8px 0;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tile small{display:block;padding:0 8px 9px;font-size:12px}.tile em{background:rgba(10,18,34,.66);color:#ffd88a;top:7px;right:7px;z-index:1}
 .tile.sm{padding:0;border-radius:12px}.tile.sm .pic{border-radius:0}.tile.sm b{margin:5px 5px 6px}.tile.sm em{top:4px;right:4px}
-.mc{position:relative;height:136px;margin:10px 0 2px;border-radius:16px;overflow:hidden;cursor:pointer;background:var(--inset);color:#fff}.mc .pic{position:absolute;inset:0;width:100%;height:100%;border-radius:0;box-shadow:none;margin:0}.mc::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 30%,rgba(5,9,20,.78))}.mc .t{position:absolute;left:13px;right:13px;bottom:10px;z-index:1;display:flex;align-items:flex-end;gap:8px}.mc .g{flex:1;min-width:0}.mc small{display:block;font-size:12px;opacity:.86;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mc small.k{color:#ffd88a;opacity:1;letter-spacing:.06em}.mc b{display:block;font-size:17px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mc button{flex:none;padding:0 11px;height:32px;min-height:0;font-size:12px;border-radius:10px;color:#fff;background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.28);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}.mc button:hover{background:rgba(255,255,255,.3)}.mc button.ib{width:32px;padding:0;display:grid;place-items:center}.mc button.ib svg{width:16px;height:16px}
+.mc{position:relative;height:136px;margin:10px 0 2px;border-radius:16px;overflow:hidden;cursor:pointer;background:var(--inset);color:#fff}.mc .pic{position:absolute;inset:0;width:100%;height:100%;border-radius:0;box-shadow:none;margin:0}.mc::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 30%,rgba(5,9,20,.78))}.mc .t{position:absolute;left:13px;right:13px;bottom:10px;z-index:1;display:flex;align-items:flex-end;gap:8px}.mc .g{flex:1;min-width:0}.mc small{display:block;font-size:12px;opacity:.86;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mc small.k{color:#ffd88a;opacity:1;letter-spacing:.06em}.mc b{display:block;font-size:17px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mc button{flex:none;padding:0 11px;height:32px;min-height:0;font-size:12px;border-radius:10px;color:#fff;background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.28);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}.mc button:hover{background:rgba(255,255,255,.3)}.mc .t button.ib{flex:none;width:36px;height:36px;min-width:0;min-height:0;padding:0;border-radius:50%;display:grid;place-items:center}.mc button.ib svg{width:16px;height:16px}
 /* a photo that has not arrived yet: a band of light moves across its place */
 img.pic:not(.ld){background:linear-gradient(100deg,var(--inset) 35%,var(--lg-f) 50%,var(--inset) 65%) 0 0/300% 100%;animation:shm 1.3s linear infinite}@keyframes shm{from{background-position:100% 0}to{background-position:-50% 0}}
 @media(prefers-reduced-motion:reduce){img.pic:not(.ld){animation:none}}
 /* phone: the tab bar floats over the list as a capsule of clear glass; the list scrolls under it and shows through */
 @media(max-width:820px) and (orientation:portrait),(max-width:820px) and (min-height:521px){
-#panel #tabs{position:absolute;left:14px;right:14px;bottom:10px;margin:0;z-index:6;min-height:60px;padding:4px;border-radius:999px;background:var(--lg-tab);box-shadow:0 0 0 .5px var(--lg-r),inset 0 1px 0 var(--lg-sp2),inset 0 -1px 1px var(--lg-rim),0 6px 18px var(--lg-tsh)}
-#panel #tabs::before{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(140deg,var(--lg-sn),transparent 38%,transparent 72%,var(--lg-rim))}
-/* the capsule is a lighter pane of the same glass as the sheet, so it always carries the sheet's colour; a blur of its own inside the blurred sheet does not work in Safari. The list fades out just above it instead of running underneath */
-#panel #pb{padding-bottom:104px;-webkit-mask-image:linear-gradient(transparent,#000 var(--f0,0px),#000 calc(100% - 108px),transparent calc(100% - 74px));mask-image:linear-gradient(transparent,#000 var(--f0,0px),#000 calc(100% - 108px),transparent calc(100% - 74px))}.pk #panel #pb{padding-bottom:0}
+body>#tabs{position:fixed;left:22px;right:22px;bottom:calc(var(--pgap,8px) + 10px);margin:0;z-index:2;min-height:60px;padding:4px;border-radius:999px;display:flex;gap:4px;align-items:stretch;touch-action:none;background:var(--lg-tab);-webkit-backdrop-filter:blur(calc(16px + var(--gk,0px))) saturate(1.8);backdrop-filter:blur(calc(16px + var(--gk,0px))) saturate(1.8);box-shadow:0 0 0 .5px var(--lg-r),inset 0 1px 0 var(--lg-sp),inset 0 -1px 1px var(--lg-rim),0 8px 22px var(--lg-tsh);transition:opacity .2s}
+body>#tabs::before{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(140deg,var(--lg-sn),transparent 38%,transparent 72%,var(--lg-rim))}
+.kb body>#tabs,.rp body>#tabs{opacity:0;pointer-events:none}
+/* the list runs under the capsule and shows through it, blurred; its last rows can still be scrolled clear */
+#panel #pb{padding-bottom:88px}.pk #panel #pb{padding-bottom:0}
 #tl{background:var(--lg-th);box-shadow:0 4px 14px rgba(0,0,0,.16),inset 0 1px 0 var(--lg-sp),inset 0 -1px 0 var(--lg-rim),inset 0 0 0 .5px var(--lg-r)}
 #tabs button.on{color:var(--at)}#tabs button:active{scale:.94}#tabs button{transition:scale .2s var(--lg-spring),color .2s}}
-html{--lg-tab:rgba(255,255,255,.075);--lg-tsh:rgba(0,0,0,.22)}html[data-theme=light]{--lg-tab:rgba(255,255,255,.42);--lg-tsh:rgba(40,60,100,.12)}html:not([data-theme=light]) #tabs button{color:#c3cde4}html:not([data-theme=light]) #tabs button.on{color:var(--at)}
+html{--lg-tab:rgba(120,130,150,.16);--lg-tsh:rgba(0,0,0,.28)}html[data-theme=light]{--lg-tab:rgba(255,255,255,.4);--lg-tsh:rgba(40,60,100,.14)}html:not([data-theme=light]) #tabs button{color:#c3cde4}html:not([data-theme=light]) #tabs button.on{color:var(--at)}
 /* 3. a sheet folded down to its handle shows the map through the capsule, never the list behind it */
 #panel #pb{opacity:var(--pbo,1);transition:opacity .28s var(--lg-ease)}.shd #panel #pb{transition:none}.pk #panel #pb{pointer-events:none}
-html.lite #panel #tabs{background:var(--glass-solid)}html.lite #panel #pb{-webkit-mask-image:none;mask-image:none}
+html.lite body>#tabs{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--glass-solid)}
 /* sent postcards */
 .pcg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.pcg button{display:block;padding:0;text-align:left;background:none;border:0;min-height:0;min-width:0}.pcg button:hover{background:none}.pcc{position:relative;min-width:0}.pcg button.pcx,.pcg button.pcx:hover{position:absolute;top:6px;right:6px;width:30px;height:30px;display:grid;place-items:center;border-radius:50%;color:#fff;background:rgba(10,16,30,.55);border:.5px solid rgba(255,255,255,.22)}.pcg button.pcx svg{width:14px;height:14px}.pcg canvas{display:block;width:100%;height:auto;aspect-ratio:3/2;border-radius:6px;background:var(--inset);box-shadow:0 5px 14px rgba(0,0,0,.26)}.pcg b{display:block;margin-top:7px;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pcg small{display:block;color:var(--mut);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 /* city detail */
@@ -529,7 +530,7 @@ const theme=()=>S.set.theme==='auto'?(mq.matches?'light':'dark'):S.set.theme;
 const SUN='<svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg>',MOON='<svg class="ic" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>';
 function applyTheme(){const th=theme(),r=document.documentElement;r.dataset.theme=th;r.style.colorScheme=th;const b=$('#th');b.innerHTML=th==='light'?MOON:SUN;b.title=th==='light'?tr('切换到深色','Switch to dark'):tr('切换到浅色','Switch to light')}
 let L=S.set.lang;if(!L){try{L=localStorage.getItem('fernweh.lang')}catch(e){}}L=L||((navigator.language||'').startsWith('zh')?'zh':'en');
-const APPV='0.21',APPD='2026-11-12';
+const APPV='0.22',APPD='2026-11-12';
 const tr=(a,b)=>L==='zh'?a:b;const DS='<i class="dsep"></i>',zpT=id=>(ZP[id]||'').replace(/ · /g,''),XI='<svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>',BI='<svg class="ic" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg>',NI='<svg class="ic" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg>';
 applyTheme();
 let DEMO=null,kept=false;const save=()=>{clearTimeout(saveT);saveT=0;if(DEMO)return;stubSave();if(!kept&&Object.keys(S.v).length){kept=true;try{const q=navigator.storage&&navigator.storage.persist&&navigator.storage.persist();if(q&&q.catch)q.catch(()=>{})}catch(_){}}const v={};let hold=0;for(const i in S.v){const o=S.v[i];if(o.img&&PH.have[i]===o.img){const{img,...r}=o;v[i]=r}else{v[i]=o;if(o.img)hold++}}
@@ -604,18 +605,35 @@ maya:'M-17 0v-4h34v4zM-13 -4v-4h26v4zM-9 -8v-4h18v4zM-5 -12v-5h10v5zM-2.5 -17v-2
 hut:'M-5 0v-5h10v5zM-7.5 -5l7.5 -8 7.5 8z',
 yurt:'M-9 0v-5q9 -8 18 0v5zM-1.2 -9.6h2.4v1.6h-2.4z',
 bali:'M-10 0v-6h3v-4h2v-4h2v-6h1.6v20zM10 0v-6h-3v-4h-2v-4h-2v-6h-1.6v20z',
+fort:'M-18 0v-16h6v16zM-19.5 -16l4.5 -9 4.5 9zM12 0v-20h6v20zM10.5 -20l4.5 -10 4.5 10zM-12 0v-9h2v-2.5h2.5v2.5h3v-2.5h2.5v2.5h3v-2.5h2.5v2.5h3v-2.5h2.5v2.5h3v9zM-4 -9v-8h8v8zM-5 -17v-2.4h2v1.4h2v-1.4h2v1.4h2v-1.4h2v2.4zM14.6 -30v-5h.8v5zM15.4 -35l4 1.4 -4 1.4z',
+cathedral:'M-9 0v-20h6v20zM3 0v-20h6v20zM-10 -20l4 -14 4 14zM2 -20l4 -14 4 14zM-3 0v-13l3 -4 3 4v13zM9 0v-11h11v11zM9 -11l5.5 -4 5.5 4z',
+gate:'M-6 0v-18h12v18zM-8 -18l8 -9 8 9zM-.5 -27v-4h1v4zM-17 0v-7h11v7zM6 0v-7h11v7zM-17 -7v-2h2v2zM-13 -7v-2h2v2zM11 -7v-2h2v2zM15 -7v-2h2v2z',
+aqueduct:'M-24 0v-16h48v16h-3v-7a4.5 4.5 0 0 0 -9 0v7h-3v-7a4.5 4.5 0 0 0 -9 0v7h-3v-7a4.5 4.5 0 0 0 -9 0v7h-3v-7a4.5 4.5 0 0 0 -9 0v7z',
+citygate:'M-17 0v-10h34v10h-13v-5a4 4 0 0 0 -8 0v5zM-17 -10v-2h3v2zM-11 -10v-2h3v2zM8 -10v-2h3v2zM14 -10v-2h3v2zM-9 -10v-6h18v6zM-13 -16Q0 -23.5 13 -16l-2.4 1.5h-21.2z',
+pavilion:'M-6.5 0v-8h1.3v8zM5.2 0v-8h1.3v8zM-10 -8Q0 -17.5 10 -8l-1.6 1.1h-16.8zM-.5 -14v-3.4h1v3.4zM-8 0v-1.2h16v1.2z',
+stilt:'M-8 -5v-6h16v6zM-11.5 -10.4L0 -19l11.5 8.6l-1 1.4L0 -16.6l-10.5 7.6zM-7 0v-5h1.3v5zM5.7 0v-5h1.3v5zM-.6 0v-5h1.2v5z',
+mud:'M-13 0v-12h26v12zM-13 -12l2.2 -7 2.2 7zM-4.5 -12l4.5 -10 4.5 10zM8.6 -12l2.2 -7 2.2 7zM-15 -6h3v.8h-3zM12 -6h3v.8h-3zM-15 -9h3v.8h-3zM12 -9h3v.8h-3z',
+capitol:'M-15 0v-7h30v7zM-17 -7h34v-1.6h-34zM-7 -8.6v-4h14v4zM-5.5 -12.6a5.5 6.5 0 0 1 11 0zM-.5 -19v-4.5h1v4.5z',
+elevator:'M-11 0v-14h4v-4.5h4v4.5h3v14zM0 0v-11.5a2.6 2.6 0 0 1 5.2 0v11.5zM5.6 0v-11.5a2.6 2.6 0 0 1 5.2 0v11.5z',
+kremlin:'M-4.5 0v-14h9v14zM-5.5 -14h11v-2.2h-11zM-3.2 -16.2l3.2 -13 3.2 13zM-.5 -29v-3.4h1v3.4zM4.5 0v-8h12v8zM4.5 -8v-1.6h2v1.6zM8.5 -8v-1.6h2v1.6zM12.5 -8v-1.6h2v1.6z',
+stave:'M-7.5 0v-6h15v6zM-9.5 -6l9.5 -7.5 9.5 7.5zM-4.5 -11v-4h9v4zM-6.5 -15l6.5 -6.5 6.5 6.5zM-2 -19v-3h4v3zM-3.4 -22l3.4 -5 3.4 5zM-.5 -27v-4h1v4z',
+kasbah:'M-14 0v-11h4v-2h-1v-2h6v2h-1v2h12v-2h-1v-2h6v2h-1v2h4v11zM-3 -11v-5h6v5zM-4 -16v-1.8h1.6v1h1.6v-1h1.6v1h1.6v-1h1.6v1.8z',
+gables:'M-13 0v-12h1.5v-2h1.5v-2h2.5v2h1.5v2h1.5v12zM-4.2 0v-14l4.2 -5.5 4.2 5.5v14zM4.5 0v-11h1.5v-2h1.5v-2h2.5v2h1.5v2h1.5v11z',
+ottoman:'M-10 0v-7a10 9 0 0 1 20 0v7zM-5 -14a5 5 0 0 1 10 0zM-.4 -19v-4h.8v4zM-16.8 0v-24l.9 -4 .9 4v24zM15 0v-24l.9 -4 .9 4v24z',
+baobab:'M-2.4 0q1.2 -7 -.6 -11q-7 -1 -9 -5q9 2 11 1q-2 -4 0 -6.5q1.4 3 1.6 6.5q5 -3 9 -2q-5 2 -7 5q-1.6 5 .2 12z',
 pagoda:(()=>{let m='';for(let i=0;i<5;i++){const w=16-2.6*i,y=-6.4*i;m+=`M${-w/2} ${y}v-4.6h${w}v4.6zM${-w/2-3.4} ${y-4.6}Q0 ${y-9.2} ${w/2+3.4} ${y-4.6}l-1.7 1.8H${-w/2-1.7}z`}return m+'M-.5 -35v-6h1v6z'})(),
 pine:'M-3.6 0L0 -7 3.6 0zM-3 -4L0 -10.5 3 -4zM-2.2 -8L0 -13.5 2.2 -8z',acacia:'M-.6 0v-9h1.2v9zM-10 -8.6q10 -6.4 20 0q-10 2.4 -20 0z',cypress:'M0 0q-3.2 -9 0 -19q3.2 10 0 19z',cactus:'M-1 0v-12a1 1 0 0 1 2 0v12zM-4.6 -4v-5a1 1 0 0 1 2 0v3h1.6v2zM4.6 -5v-4a1 1 0 0 0 -2 0v2h-1.6v2z'};
 /* what a place looks like, by country: [buildings to choose from, trees, land behind]. Anything not listed gets a church spire among hills */
 const LOOK={};(a=>a.forEach(([cs,v])=>cs.split(' ').forEach(k=>LOOK[k]=v)))([
-['CN TW HK MO',[['pagoda','hall','bridge'],'','karst']],['JP',[['torii','castle','pagoda'],'pine','cone']],['KR KP',[['hall','pagoda'],'pine','hill']],
-['TH KH LA MM LK BT NP',[['stupa','prang'],'palm','hill']],['ID',[['bali','mosque'],'palm','cone']],['IN',[['taj','shikhara'],'palm','flat']],
-['SA AE TR IR IQ PK BD MY MA DZ TN LY JO SY KW QA OM YE AF AZ SD SO NE ML SN PS LB BH MR TD',[['mosque'],'palm','dune']],['EG',[['pyramid','mosque'],'palm','dune']],
-['UZ KZ KG TJ TM MN',[['yurt','mosque'],'','mtn']],['RU UA BY BG RS MK GE AM RO MD',[['onion'],'pine','flat']],
-['NL',[['windmill','church'],'','flat']],['GB IE',[['clock','church'],'','hill']],['IT SM VA MT',[['campanile'],'cypress','hill']],['GR CY',[['greek','chapel'],'cypress','hill']],
-['NO SE FI IS DK',[['cabin','church'],'pine','mtn']],['CH AT SI LI',[['church','cabin'],'pine','mtn']],['US CA',[['watertower','barn','church'],'','flat']],
-['MX GT BZ HN',[['colonial','maya'],'cactus','mtn']],['PE BO EC CO CL',[['colonial','maya'],'','mtn']],['AU NZ',[['lighthouse','church'],'','hill']]]);
-const lookOf=c=>{const k=LOOK[c[2]];if(k)return k;const i=INFO[c[2]]||[];return i[2]==='Africa'?[['hut'],'acacia','flat']:i[2]==='Americas'?[['colonial'],'palm','hill']:i[2]==='Oceania'?[['hut','lighthouse'],'palm','hill']:[['church','clock'],'','hill']};
+['CN TW HK MO',[['pagoda','hall','bridge','citygate','pavilion'],'','karst']],['JP',[['torii','castle','pagoda'],'pine','cone']],['KR KP',[['hall','pavilion','citygate','pagoda'],'pine','hill']],
+['TH KH LA MM LK BT NP',[['stupa','prang','stilt'],'palm','hill']],['VN',[['pagoda','stilt','pavilion'],'palm','karst']],['ID PH',[['bali','stilt','mosque'],'palm','cone']],['IN',[['taj','shikhara','kasbah'],'palm','flat']],
+['SA AE IR IQ PK BD MY JO SY KW QA OM YE AF AZ SD SO PS LB BH MR TD',[['mosque','kasbah'],'palm','dune']],['EG',[['pyramid','mosque'],'palm','dune']],['MA DZ TN LY',[['kasbah','mosque'],'palm','dune']],['ML NE BF SN',[['mud','hut'],'acacia','flat']],
+['TR',[['ottoman','aqueduct','mosque'],'cypress','hill']],['UZ KZ KG TJ TM MN',[['yurt','mosque'],'','mtn']],['RU',[['onion','kremlin','church'],'pine','flat']],['UA BY BG RS MK GE AM RO MD',[['onion','fort','church'],'pine','hill']],
+['NL BE',[['windmill','gables','church'],'','flat']],['GB IE',[['clock','fort','cathedral','church'],'','hill']],['FR LU',[['church','fort','cathedral','aqueduct'],'','hill']],['DE CZ PL HU SK',[['cathedral','fort','gate','church'],'','hill']],
+['ES PT',[['colonial','fort','aqueduct','windmill'],'cypress','hill']],['IT SM VA MT',[['campanile','aqueduct','fort'],'cypress','hill']],['GR CY',[['greek','chapel','windmill'],'cypress','hill']],['HR SI ME AL BA',[['campanile','fort','church'],'cypress','mtn']],
+['NO SE FI IS DK EE LV LT',[['stave','cabin','lighthouse','church'],'pine','mtn']],['CH AT LI',[['church','cabin','fort'],'pine','mtn']],['US CA',[['watertower','barn','capitol','elevator','church'],'','flat']],
+['MX GT BZ HN',[['colonial','maya'],'cactus','mtn']],['PE BO EC CO CL',[['colonial','maya'],'','mtn']],['AU NZ',[['lighthouse','church','watertower'],'','hill']]]);
+const lookOf=c=>{const k=LOOK[c[2]];if(k)return k;const i=INFO[c[2]]||[];return i[2]==='Africa'?[['hut','mud'],'acacia','flat']:i[2]==='Americas'?[['colonial','lighthouse'],'palm','hill']:i[2]==='Oceania'?[['hut','lighthouse','stilt'],'palm','hill']:i[2]==='Asia'?[['pagoda','mosque','stupa'],'','hill']:[['church','clock','fort','gate'],'','hill']};
 function scene(c){const id=c[0],h=((c[2].charCodeAt(0)*37+c[2].charCodeAt(1)*11)%360+id%25-12+360)%360,r=rng(id),pop=c[5]||0,la=Math.abs(c[3]),f=n=>n.toFixed(1),night=r()<.2,hs=(d,sa,l)=>`hsl(${(h+d)%360},${sa}%,${l}%)`,B=120,[els,veg0,ter]=lookOf(c),veg=veg0==='palm'&&la>30?'':veg0||(la>52?'pine':'');
  /* sky: three quiet bands of the country's colour, a pale glow low over the land; stars and a thin moon at night */
  let o=`<defs><linearGradient id="k" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${hs(0,34,night?12:27)}"/><stop offset=".55" stop-color="${hs(18,34,night?21:41)}"/><stop offset=".82" stop-color="${hs(32,40,night?30:58)}"/></linearGradient></defs><rect width="200" height="150" fill="url(#k)"/>`;
@@ -631,7 +649,7 @@ function scene(c){const id=c[0],h=((c[2].charCodeAt(0)*37+c[2].charCodeAt(1)*11)
  else if(ter==='flat')o+=`<path d="${wave(108,6,44)}" fill="${c1}" opacity=".8"/><path d="${wave(114,4,40)}" fill="${c2}"/>`;
  else o+=`<path d="${wave(96,la>42?30:20,36)}" fill="${c1}" opacity=".8"/><path d="${wave(108,12,26)}" fill="${c2}"/>`;
  /* the landmark: large in a town, smaller beside the towers of a big city. Houses keep clear of it */
- const D=hs(20,26,night?7:12),k=pop>=1e6?1.15:pop>=1e5?1.45:1.7,el=els[Math.floor(r()*els.length)],hx=el==='span'?100:36+r()*128,hw=(el==='bridge'||el==='pyramid'?24:19)*k,free=x=>x<hx-hw||x>hx+hw;
+ const D=hs(20,26,night?7:12),k=pop>=1e6?1.15:pop>=1e5?1.45:1.7,el=els[Math.floor(r()*els.length)],hx=el==='span'?100:36+r()*128,hw=(/^(bridge|pyramid|aqueduct|citygate|fort|gate|kasbah|capitol|span)$/.test(el)?26:19)*k,free=x=>x<hx-hw||x>hx+hw;
  let b='',w='',t='';
  if(pop>=1e6){let x=3;while(x<197){const bw=7+r()*9,bh=14+r()*(pop>=5e6?52:36);if(free(x)&&free(x+bw)){b+=`M${f(x)} ${B}V${f(B-bh)}h${f(bw)}V${B}z`;if(r()<.3)b+=`M${f(x+bw/2-.5)} ${f(B-bh)}v-${f(4+r()*7)}h1V${f(B-bh)}z`;for(let y=B-bh+3;y<B-3;y+=4)for(let q=x+1.5;q<x+bw-2;q+=3)if(r()<.4)w+=`M${f(q)} ${f(y)}h1.4v1.8h-1.4z`}x+=bw+.8+r()*2.2}}
  else if(pop>=1e5){let x=3;while(x<197){const bw=9+r()*10,bh=7+r()*15;if(free(x)&&free(x+bw)){b+=`M${f(x)} ${B}V${f(B-bh)}h${f(bw)}V${B}z`;if(r()<.35)b+=`M${f(x+1.5)} ${f(B-bh)}v-2.4h${f(bw-3)}v2.4z`;for(let y=B-bh+3;y<B-3;y+=4.2)for(let q=x+1.8;q<x+bw-2.2;q+=3.4)if(r()<.36)w+=`M${f(q)} ${f(y)}h1.5v1.9h-1.5z`}x+=bw+1+r()*3}}
@@ -639,7 +657,7 @@ function scene(c){const id=c[0],h=((c[2].charCodeAt(0)*37+c[2].charCodeAt(1)*11)
  const put=(n,x,q)=>`<path transform="translate(${f(x)} ${B}) scale(${f(q)})" d="${EL[n]}" fill="${D}"/>`;
  o+=`<path d="${b}" fill="${D}"/>`+put(el==='bridge'&&pop>=1e6&&c[2]!=='CN'?'span':el,hx,k);
  if(veg==='palm')for(let i=0;i<3;i++){const x=10+r()*180,hh=15+r()*8,tx=x+(r()-.5)*5,ty=B-hh;t+=`<path d="M${f(x)} ${B}Q${f(x+1.5)} ${f(B-hh/2)} ${f(tx)} ${f(ty)}" stroke="${D}" stroke-width="1.5" fill="none"/>`;for(const[dx,dy]of[[-8,1],[-6,-4],[0,-6],[6,-4],[8,1]])t+=`<path d="M${f(tx)} ${f(ty)}Q${f(tx+dx*.6)} ${f(ty+dy-2)} ${f(tx+dx)} ${f(ty+dy+3)}" stroke="${D}" stroke-width="1.3" fill="none" stroke-linecap="round"/>`}
- else if(veg)for(let i=0,n=veg==='pine'?7:veg==='cactus'?3:4;i<n;i++)t+=put(veg,6+r()*188,.8+r()*.6);
+ else if(veg)for(let i=0,n=veg==='pine'?7:veg==='cactus'?3:4;i<n;i++)t+=put(veg==='acacia'&&r()<.35?'baobab':veg,6+r()*188,.8+r()*.6);
  o+=t+`<path d="${w}" fill="#ffe9a8" opacity="${night?.9:.4}"/><rect y="${B}" width="200" height="30" fill="${hs(24,28,night?9:17)}"/>`;
  for(let i=0;i<7;i++){const y=B+3+i*3.8+r()*2,x=r()*150,ww=14+r()*40;o+=`<path d="M${f(x)} ${f(y)}h${f(ww)}" stroke="#fff" stroke-width=".7" opacity="${f(.05+r()*.08)}"/>`}
  return o}
@@ -799,7 +817,7 @@ if(RP&&RP.hop){const{a:p,b:q,e}=RP.hop,Y1=sy(p),Y2=sy(q),dX=shortDX(p,q),dy=Y2-Y
 if(sc){const g=Math.round(255-221*lf);x.strokeStyle=`rgb(${g},${g},${g})`;x.lineWidth=2;for(const o of OFF){x.beginPath();x.arc(sx(sc)+o,sy(sc),12,0,7);x.stroke()}}
 const a=$('#attr'),txt=b.u&&tErr>6&&!tOK?tr('底图加载失败，请检查网络或换一个底图','Basemap failed to load. Check your connection or choose another'):(b.a||'');if(a.textContent!==txt)a.textContent=txt}
 /* WebKit can keep an old picture behind a backdrop-filter while the canvas under it changes. A blur radius that flips by a hundredth of a pixel makes it take a new one; only the frames in which the map is drawn pay for it */
-let GLS=null,glk=0;const glassTick=()=>{if(document.documentElement.classList.contains('lite'))return;GLS=GLS||document.querySelectorAll('.glass');glk^=1;const v=glk?'.01px':'0px';for(const e of GLS)e.style.setProperty('--gk',v)};
+let GLS=null,glk=0;const glassTick=()=>{if(document.documentElement.classList.contains('lite'))return;GLS=GLS||document.querySelectorAll('.glass,body>#tabs');glk^=1;const v=glk?'.01px':'0px';for(const e of GLS)e.style.setProperty('--gk',v)};
 let raf=0,bt=0;const req=()=>{if(!raf)raf=requestAnimationFrame(()=>{raf=0;draw();glassTick()})};
 const rbNeed=()=>{if(!Vb)return true;if(bs().v&&!RP)return false;const r=V.s/Vb.s;let d=Vb.cx-V.cx;d-=Math.round(d);return (W/2+M)*r-Math.abs(d*V.s)<W/2||(H/2+M)*r-Math.abs((Vb.cy-V.cy)*V.s)<H/2};
 const mvOn=()=>{vtMv=performance.now()};
@@ -1263,7 +1281,9 @@ function zfit(){const z=$('#zoom'),ly=$('#lyp'),at=$('#attr');if(!mob()){[z,ly,a
  ly.style.maxHeight=Math.max(96,room)+'px'}
 function applySheet(px){shPx=px;rootEl.style.setProperty('--sh',px+'px');rootEl.style.setProperty('--pbo',mob()?Math.max(0,Math.min(1,(px-snaps().p-6)/120)).toFixed(3):'1');rootEl.classList.toggle('pk',mob()&&px<snaps().p+28);rootEl.classList.toggle('sf',mob()&&px>=snaps().f-8);zfit()}
 function setSheet(k){shs=k;applySheet(snaps()[k])}
-function layoutSheet(){if(mob())setSheet(shs);else{rootEl.style.removeProperty('--sh');rootEl.style.removeProperty('--pbo');rootEl.classList.remove('pk');shs='h';zfit()}}
+/* phones: the tab bar sits beside the sheet in the page, not inside it; wide screens: back inside, above the list */
+function dockTabs(){const t=$('#tabs'),m=mob();if(m&&t.parentNode!==document.body)document.body.appendChild(t);else if(!m&&t.parentNode!==panelEl)panelEl.insertBefore(t,el);if(m)rootEl.style.setProperty('--pgap',panelGap()+'px');GLS=null}
+function layoutSheet(){dockTabs();if(mob())setSheet(shs);else{rootEl.style.removeProperty('--sh');rootEl.style.removeProperty('--pbo');rootEl.classList.remove('pk');shs='h';zfit()}}
 const mapFocus=()=>{if(mob()){const h=shs==='h'?shPx:snaps().h;return[0,(brandBottom()+VH()-KB-h-8)/2]}return[Math.max(0,innerWidth-panelEl.getBoundingClientRect().left),H/2]};
 const sdStart=y=>{sd={y0:y,h0:shPx,ly:y,lt:performance.now(),v:0,on:false}};
 function sdMove(y){if(!sd)return;const d=sd.y0-y;if(!sd.on){if(Math.abs(d)<6)return;sd.on=true;rootEl.classList.add('shd')}const n=performance.now(),s=snaps();sd.v=(sd.ly-y)/Math.max(1,n-sd.lt);sd.ly=y;sd.lt=n;applySheet(Math.max(s.p,Math.min(s.f,sd.h0+d)))}
