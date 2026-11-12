@@ -162,17 +162,22 @@ img.pic:not(.ld){background:linear-gradient(100deg,var(--inset) 35%,var(--lg-f) 
 @media(prefers-reduced-motion:reduce){img.pic:not(.ld){animation:none}}
 /* phone: the tab bar floats over the list as a capsule of clear glass; the list scrolls under it and shows through */
 @media(max-width:820px) and (orientation:portrait),(max-width:820px) and (min-height:521px){
-body>#tabs{position:fixed;left:22px;right:22px;bottom:calc(var(--pgap,8px) + 10px);margin:0;z-index:2;min-height:60px;padding:4px;border-radius:999px;display:flex;gap:4px;align-items:stretch;touch-action:none;background:var(--lg-tab);-webkit-backdrop-filter:blur(calc(16px + var(--gk,0px))) saturate(1.8);backdrop-filter:blur(calc(16px + var(--gk,0px))) saturate(1.8);box-shadow:0 0 0 .5px var(--lg-r),inset 0 1px 0 var(--lg-sp),inset 0 -1px 1px var(--lg-rim),0 8px 22px var(--lg-tsh);transition:opacity .2s}
+body>#tabs{position:fixed;left:22px;right:22px;bottom:calc(var(--pgap,8px) + 10px);margin:0;z-index:2;min-height:60px;padding:4px;border-radius:999px;display:flex;gap:4px;align-items:stretch;touch-action:none;background:var(--lg-tab);-webkit-backdrop-filter:blur(calc(20px + var(--gk,0px))) saturate(1.6) brightness(var(--lg-tbr,1));backdrop-filter:blur(calc(20px + var(--gk,0px))) saturate(1.6) brightness(var(--lg-tbr,1));box-shadow:0 0 0 .5px var(--lg-r),inset 0 1px 0 var(--lg-sp),inset 0 -1px 1px var(--lg-rim),0 8px 22px var(--lg-tsh);transition:opacity .2s}
 body>#tabs::before{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(140deg,var(--lg-sn),transparent 38%,transparent 72%,var(--lg-rim))}
 .kb body>#tabs,.rp body>#tabs{opacity:0;pointer-events:none}
 /* the list runs under the capsule and shows through it, blurred; its last rows can still be scrolled clear */
-#panel #pb{padding-bottom:88px}.pk #panel #pb{padding-bottom:0}
+/* what passes under the capsule is dimmed to a third first, the way a scroll edge is, so the labels on the glass stay clear; below the capsule it is gone */
+#panel #pb{padding-bottom:96px;-webkit-mask-image:linear-gradient(transparent,#000 var(--f0,0px),#000 calc(100% - 122px),rgba(0,0,0,.55) calc(100% - 78px),rgba(0,0,0,.55) calc(100% - 18px),transparent calc(100% - 8px));mask-image:linear-gradient(transparent,#000 var(--f0,0px),#000 calc(100% - 122px),rgba(0,0,0,.55) calc(100% - 78px),rgba(0,0,0,.55) calc(100% - 18px),transparent calc(100% - 8px))}.pk #panel #pb{padding-bottom:0}
 #tl{background:var(--lg-th);box-shadow:0 4px 14px rgba(0,0,0,.16),inset 0 1px 0 var(--lg-sp),inset 0 -1px 0 var(--lg-rim),inset 0 0 0 .5px var(--lg-r)}
 #tabs button.on{color:var(--at)}#tabs button:active{scale:.94}#tabs button{transition:scale .2s var(--lg-spring),color .2s}}
-html{--lg-tab:rgba(120,130,150,.16);--lg-tsh:rgba(0,0,0,.28)}html[data-theme=light]{--lg-tab:rgba(255,255,255,.4);--lg-tsh:rgba(40,60,100,.14)}html:not([data-theme=light]) #tabs button{color:#c3cde4}html:not([data-theme=light]) #tabs button.on{color:var(--at)}
+html{--lg-tab:rgba(0,0,0,.13);--lg-tbr:.88;--lg-tsh:rgba(0,0,0,.3)}html[data-theme=light]{--lg-tab:rgba(255,255,255,.48);--lg-tbr:1.04;--lg-tsh:rgba(40,60,100,.14)}
+body>#tabs button{color:#e8edf8;text-shadow:0 1px 2px rgba(0,0,0,.4)}html[data-theme=light] body>#tabs button{color:#2b3654;text-shadow:0 1px 1px rgba(255,255,255,.6)}body>#tabs button.on,html[data-theme=light] body>#tabs button.on{color:var(--at)}
 /* 3. a sheet folded down to its handle shows the map through the capsule, never the list behind it */
 #panel #pb{opacity:var(--pbo,1);transition:opacity .28s var(--lg-ease)}.shd #panel #pb{transition:none}.pk #panel #pb{pointer-events:none}
-html.lite body>#tabs{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--glass-solid)}
+/* the layers panel and the year menu are the same glass as the capsule */
+html #lyp,html #ymenu{background:var(--lg-tab);-webkit-backdrop-filter:blur(calc(20px + var(--gk,0px))) saturate(1.6) brightness(var(--lg-tbr,1));backdrop-filter:blur(calc(20px + var(--gk,0px))) saturate(1.6) brightness(var(--lg-tbr,1));box-shadow:0 0 0 .5px var(--lg-r),inset 0 1px 0 var(--lg-sp),inset 0 -1px 1px var(--lg-rim),0 8px 22px var(--lg-tsh)}
+html.lite #lyp,html.lite #ymenu{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--glass-solid)}
+html.lite body>#tabs{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--glass-solid)}html.lite #panel #pb{-webkit-mask-image:none;mask-image:none}
 /* sent postcards */
 .pcg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.pcg button{display:block;padding:0;text-align:left;background:none;border:0;min-height:0;min-width:0}.pcg button:hover{background:none}.pcc{position:relative;min-width:0}.pcg button.pcx,.pcg button.pcx:hover{position:absolute;top:6px;right:6px;width:30px;height:30px;display:grid;place-items:center;border-radius:50%;color:#fff;background:rgba(10,16,30,.55);border:.5px solid rgba(255,255,255,.22)}.pcg button.pcx svg{width:14px;height:14px}.pcg canvas{display:block;width:100%;height:auto;aspect-ratio:3/2;border-radius:6px;background:var(--inset);box-shadow:0 5px 14px rgba(0,0,0,.26)}.pcg b{display:block;margin-top:7px;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pcg small{display:block;color:var(--mut);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 /* city detail */
@@ -530,7 +535,7 @@ const theme=()=>S.set.theme==='auto'?(mq.matches?'light':'dark'):S.set.theme;
 const SUN='<svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg>',MOON='<svg class="ic" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>';
 function applyTheme(){const th=theme(),r=document.documentElement;r.dataset.theme=th;r.style.colorScheme=th;const b=$('#th');b.innerHTML=th==='light'?MOON:SUN;b.title=th==='light'?tr('切换到深色','Switch to dark'):tr('切换到浅色','Switch to light')}
 let L=S.set.lang;if(!L){try{L=localStorage.getItem('fernweh.lang')}catch(e){}}L=L||((navigator.language||'').startsWith('zh')?'zh':'en');
-const APPV='0.22',APPD='2026-11-12';
+const APPV='0.23',APPD='2026-11-12';
 const tr=(a,b)=>L==='zh'?a:b;const DS='<i class="dsep"></i>',zpT=id=>(ZP[id]||'').replace(/ · /g,''),XI='<svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>',BI='<svg class="ic" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg>',NI='<svg class="ic" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg>';
 applyTheme();
 let DEMO=null,kept=false;const save=()=>{clearTimeout(saveT);saveT=0;if(DEMO)return;stubSave();if(!kept&&Object.keys(S.v).length){kept=true;try{const q=navigator.storage&&navigator.storage.persist&&navigator.storage.persist();if(q&&q.catch)q.catch(()=>{})}catch(_){}}const v={};let hold=0;for(const i in S.v){const o=S.v[i];if(o.img&&PH.have[i]===o.img){const{img,...r}=o;v[i]=r}else{v[i]=o;if(o.img)hold++}}
@@ -817,7 +822,7 @@ if(RP&&RP.hop){const{a:p,b:q,e}=RP.hop,Y1=sy(p),Y2=sy(q),dX=shortDX(p,q),dy=Y2-Y
 if(sc){const g=Math.round(255-221*lf);x.strokeStyle=`rgb(${g},${g},${g})`;x.lineWidth=2;for(const o of OFF){x.beginPath();x.arc(sx(sc)+o,sy(sc),12,0,7);x.stroke()}}
 const a=$('#attr'),txt=b.u&&tErr>6&&!tOK?tr('底图加载失败，请检查网络或换一个底图','Basemap failed to load. Check your connection or choose another'):(b.a||'');if(a.textContent!==txt)a.textContent=txt}
 /* WebKit can keep an old picture behind a backdrop-filter while the canvas under it changes. A blur radius that flips by a hundredth of a pixel makes it take a new one; only the frames in which the map is drawn pay for it */
-let GLS=null,glk=0;const glassTick=()=>{if(document.documentElement.classList.contains('lite'))return;GLS=GLS||document.querySelectorAll('.glass,body>#tabs');glk^=1;const v=glk?'.01px':'0px';for(const e of GLS)e.style.setProperty('--gk',v)};
+let GLS=null,glk=0;const glassTick=()=>{if(document.documentElement.classList.contains('lite'))return;GLS=GLS||document.querySelectorAll('.glass,body>#tabs,#ymenu');glk^=1;const v=glk?'.01px':'0px';for(const e of GLS)e.style.setProperty('--gk',v)};
 let raf=0,bt=0;const req=()=>{if(!raf)raf=requestAnimationFrame(()=>{raf=0;draw();glassTick()})};
 const rbNeed=()=>{if(!Vb)return true;if(bs().v&&!RP)return false;const r=V.s/Vb.s;let d=Vb.cx-V.cx;d-=Math.round(d);return (W/2+M)*r-Math.abs(d*V.s)<W/2||(H/2+M)*r-Math.abs((Vb.cy-V.cy)*V.s)<H/2};
 const mvOn=()=>{vtMv=performance.now()};

@@ -2,7 +2,7 @@
    Versioned data (?v=N) never changes under the same address: cache first.
    Photos and fine borders live in their own cache that updates never clear. Online map tiles are left alone. */
 /* the About page shows this number as 0.N: raise APPV in fernweh.html together with it */
-const CACHE = 'fernweh-v22';
+const CACHE = 'fernweh-v23';
 const MEDIA = 'fernweh-media';
 const SHELL = ['fernweh.html', 'data/core.js?v=3', 'data/rest.js?v=3', 'data/photos.js?v=8', 'manifest.webmanifest', 'icons/icon-192.png'];
 /* photos come from the photo site (same origin on GitHub Pages: /fernweh-photos/png/...) */
