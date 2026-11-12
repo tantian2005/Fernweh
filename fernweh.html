@@ -162,15 +162,16 @@ img.pic:not(.ld){background:linear-gradient(100deg,var(--inset) 35%,var(--lg-f) 
 @media(prefers-reduced-motion:reduce){img.pic:not(.ld){animation:none}}
 /* phone: the tab bar floats over the list as a capsule of clear glass; the list scrolls under it and shows through */
 @media(max-width:820px) and (orientation:portrait),(max-width:820px) and (min-height:521px){
-#panel #tabs{position:absolute;left:14px;right:14px;bottom:10px;margin:0;z-index:6;min-height:60px;padding:4px;border-radius:999px;background:var(--lg-tab,var(--lg-c));-webkit-backdrop-filter:blur(var(--lg-tb,18px)) saturate(1.9);backdrop-filter:blur(var(--lg-tb,18px)) saturate(1.9);box-shadow:0 0 0 .5px var(--lg-r),inset 0 1px 0 var(--lg-sp),inset 0 -1px 1px var(--lg-rim),0 8px 24px var(--lg-sh)}
+#panel #tabs{position:absolute;left:14px;right:14px;bottom:10px;margin:0;z-index:6;min-height:60px;padding:4px;border-radius:999px;background:var(--lg-tab);box-shadow:0 0 0 .5px var(--lg-r),inset 0 1px 0 var(--lg-sp2),inset 0 -1px 1px var(--lg-rim),0 6px 18px var(--lg-tsh)}
 #panel #tabs::before{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(140deg,var(--lg-sn),transparent 38%,transparent 72%,var(--lg-rim))}
-#panel #pb{padding-bottom:84px}.pk #panel #pb{padding-bottom:0}
+/* the capsule is a lighter pane of the same glass as the sheet, so it always carries the sheet's colour; a blur of its own inside the blurred sheet does not work in Safari. The list fades out just above it instead of running underneath */
+#panel #pb{padding-bottom:104px;-webkit-mask-image:linear-gradient(transparent,#000 var(--f0,0px),#000 calc(100% - 108px),transparent calc(100% - 74px));mask-image:linear-gradient(transparent,#000 var(--f0,0px),#000 calc(100% - 108px),transparent calc(100% - 74px))}.pk #panel #pb{padding-bottom:0}
 #tl{background:var(--lg-th);box-shadow:0 4px 14px rgba(0,0,0,.16),inset 0 1px 0 var(--lg-sp),inset 0 -1px 0 var(--lg-rim),inset 0 0 0 .5px var(--lg-r)}
 #tabs button.on{color:var(--at)}#tabs button:active{scale:.94}#tabs button{transition:scale .2s var(--lg-spring),color .2s}}
-html:not([data-theme=light]){--lg-tab:rgba(18,24,42,.58);--lg-tb:30px}html:not([data-theme=light]) #tabs button{color:#b9c5e0}html:not([data-theme=light]) #tabs button.on{color:var(--at)}
+html{--lg-tab:rgba(255,255,255,.075);--lg-tsh:rgba(0,0,0,.22)}html[data-theme=light]{--lg-tab:rgba(255,255,255,.42);--lg-tsh:rgba(40,60,100,.12)}html:not([data-theme=light]) #tabs button{color:#c3cde4}html:not([data-theme=light]) #tabs button.on{color:var(--at)}
 /* 3. a sheet folded down to its handle shows the map through the capsule, never the list behind it */
 #panel #pb{opacity:var(--pbo,1);transition:opacity .28s var(--lg-ease)}.shd #panel #pb{transition:none}.pk #panel #pb{pointer-events:none}
-html.lite #panel #tabs{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--glass-solid)}
+html.lite #panel #tabs{background:var(--glass-solid)}html.lite #panel #pb{-webkit-mask-image:none;mask-image:none}
 /* sent postcards */
 .pcg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.pcg button{display:block;padding:0;text-align:left;background:none;border:0;min-height:0;min-width:0}.pcg button:hover{background:none}.pcc{position:relative;min-width:0}.pcg button.pcx,.pcg button.pcx:hover{position:absolute;top:6px;right:6px;width:30px;height:30px;display:grid;place-items:center;border-radius:50%;color:#fff;background:rgba(10,16,30,.55);border:.5px solid rgba(255,255,255,.22)}.pcg button.pcx svg{width:14px;height:14px}.pcg canvas{display:block;width:100%;height:auto;aspect-ratio:3/2;border-radius:6px;background:var(--inset);box-shadow:0 5px 14px rgba(0,0,0,.26)}.pcg b{display:block;margin-top:7px;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pcg small{display:block;color:var(--mut);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 /* city detail */
@@ -528,7 +529,7 @@ const theme=()=>S.set.theme==='auto'?(mq.matches?'light':'dark'):S.set.theme;
 const SUN='<svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg>',MOON='<svg class="ic" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>';
 function applyTheme(){const th=theme(),r=document.documentElement;r.dataset.theme=th;r.style.colorScheme=th;const b=$('#th');b.innerHTML=th==='light'?MOON:SUN;b.title=th==='light'?tr('切换到深色','Switch to dark'):tr('切换到浅色','Switch to light')}
 let L=S.set.lang;if(!L){try{L=localStorage.getItem('fernweh.lang')}catch(e){}}L=L||((navigator.language||'').startsWith('zh')?'zh':'en');
-const APPV='0.20',APPD='2026-11-11';
+const APPV='0.21',APPD='2026-11-12';
 const tr=(a,b)=>L==='zh'?a:b;const DS='<i class="dsep"></i>',zpT=id=>(ZP[id]||'').replace(/ · /g,''),XI='<svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>',BI='<svg class="ic" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg>',NI='<svg class="ic" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg>';
 applyTheme();
 let DEMO=null,kept=false;const save=()=>{clearTimeout(saveT);saveT=0;if(DEMO)return;stubSave();if(!kept&&Object.keys(S.v).length){kept=true;try{const q=navigator.storage&&navigator.storage.persist&&navigator.storage.persist();if(q&&q.catch)q.catch(()=>{})}catch(_){}}const v={};let hold=0;for(const i in S.v){const o=S.v[i];if(o.img&&PH.have[i]===o.img){const{img,...r}=o;v[i]=r}else{v[i]=o;if(o.img)hold++}}
