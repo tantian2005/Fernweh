@@ -17,7 +17,7 @@ names|=set(re.findall(r'(?:^|[;\n,{}])\s*(?:const|let)\s+(\w+)=',js))
 names|=set(re.findall(r',(\w+)=(?:\([^()]*\)|\w+)=>',js))
 unused=[]
 for n in sorted(names):
-    c=len(re.findall(r'(?<![\w$.])'+re.escape(n)+r'(?![\w$])',js))
+    c=len(re.findall(r'(?<![\w$])(?<![\w$]\.)'+re.escape(n)+r'(?![\w$])',js))
     if c<=1: unused.append(n)
 print('\nNAMES USED ONCE (defined, never referenced):',len(unused)); print(' '.join(unused))
 
