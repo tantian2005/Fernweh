@@ -711,7 +711,7 @@ const theme=()=>S.set.theme==='auto'?(mq.matches?'light':'dark'):S.set.theme;
 const SUN='<svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg>',MOON='<svg class="ic" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>';
 function applyTheme(){accCalc();const th=theme(),r=document.documentElement;if(ACW[0]==='2')r.style.setProperty('--blue',th==='light'?'rgb(170,104,0)':'rgb(255,190,92)');else r.style.removeProperty('--blue');r.dataset.theme=th;r.style.colorScheme=th;const b=$('#th');b.innerHTML=th==='light'?MOON:SUN;b.title=th==='light'?tr('切换到深色','Switch to dark'):tr('切换到浅色','Switch to light')}
 let L=S.set.lang;if(!L){try{L=localStorage.getItem('fernweh.lang')}catch(e){}}L=L||((navigator.language||'').startsWith('zh')?'zh':'en');
-const APPV='0.29',APPD='2026-11-15';
+const APPV='0.30',APPD='2026-11-15';
 const tr=(a,b)=>L==='zh'?a:b;const DS='<i class="dsep"></i>',zpT=id=>(ZP[id]||'').replace(/ · /g,''),XI='<svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>',BI='<svg class="ic" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg>',NI='<svg class="ic" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg>';
 applyTheme();
 let DEMO=null,kept=false;const save=()=>{clearTimeout(saveT);saveT=0;if(DEMO)return;stubSave();if(!kept&&Object.keys(S.v).length){kept=true;try{const q=navigator.storage&&navigator.storage.persist&&navigator.storage.persist();if(q&&q.catch)q.catch(()=>{})}catch(_){}}const v={};let hold=0;for(const i in S.v){const o=S.v[i];if(o.img&&PH.have[i]===o.img){const{img,...r}=o;v[i]=r}else{v[i]=o;if(o.img)hold++}}
@@ -1037,7 +1037,7 @@ const mvOn=()=>{vtMv=performance.now()};
 const vc=()=>{mvOn();if(rbNeed())rb();req();clearTimeout(bt);bt=setTimeout(()=>{rb();req();if(QF&&!Q.trim()&&T==='map'&&SEL==null&&$('#res'))res()},110)};
 const touch=()=>{refresh();rb();req()};
 /* east-west wraps forever; the floor only has to keep the world filling the screen top to bottom */
-let ZMIN=0;const minS=()=>ZMIN||Math.max(H,W*.55),clamp=()=>{if(!(V.s>0))V.s=minS()||800;if(!Number.isFinite(V.cx))V.cx=.5;if(!Number.isFinite(V.cy))V.cy=.42;V.s=Math.max(minS(),Math.min(1.2e6,V.s));V.cx=((V.cx%1)+1)%1;V.cy=Math.max(H/2/V.s,Math.min(1-H/2/V.s,V.cy))};
+const minS=()=>Math.max(H,W*.55),clamp=()=>{if(!(V.s>0))V.s=minS()||800;if(!Number.isFinite(V.cx))V.cx=.5;if(!Number.isFinite(V.cy))V.cy=.42;V.s=Math.max(minS(),Math.min(1.2e6,V.s));V.cx=((V.cx%1)+1)%1;V.cy=Math.max(H/2/V.s,Math.min(1-H/2/V.s,V.cy))};
 const lvhProbe=document.createElement('div');lvhProbe.style.cssText='position:fixed;top:0;left:0;width:0;height:100lvh;visibility:hidden;pointer-events:none';document.body.appendChild(lvhProbe);
 const IOSAPP=(/iPhone|iPod|iPad/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1))&&(navigator.standalone===true||matchMedia('(display-mode:standalone)').matches);
 const fieldOn=()=>{const f=document.activeElement;return!!f&&(f.tagName==='TEXTAREA'||f.tagName==='SELECT'||(f.tagName==='INPUT'&&!/^(checkbox|radio|file|range|button)$/.test(f.type)))};
@@ -1849,8 +1849,8 @@ function camSpin(){if(matchMedia('(prefers-reduced-motion:reduce)').matches)retu
 let SPN=0;
 /* the wordmark sets the map turning, as in the demo. The next tap stops it: on a button or a panel it also does what it always does; on the map it only stops, because a dot under a finger on a moving map is chance */
 function brandSpin(){if(SPN)return;SPN=1;const lat=Math.max(-30,Math.min(50,Math.atan(Math.sinh(Math.PI*(1-2*V.cy)))*180/Math.PI));
- const lon=V.cx*360-180;if(mob())ZMIN=Math.round(H*.84);const pl=panelEl.getBoundingClientRect().left,mw=pl>W/2?pl-8:W;camTo(lon,lat,mob()?ZMIN:Math.max(minS(),mw*1.25));const k=an;setTimeout(()=>{if(SPN&&an===k)camSpin()},950);
- const eat=ev=>{if(ev.target===cv){ev.stopPropagation();ev.preventDefault()}},stop=e=>{if(e.type==='keydown'&&e.key!=='Escape')return;SPN=0;an++;if(ZMIN){ZMIN=0;camTo(V.cx*360-180,Math.atan(Math.sinh(Math.PI*(1-2*V.cy)))*180/Math.PI,minS(),500)}if(e.type==='pointerdown'&&e.target===cv){e.stopPropagation();e.preventDefault();addEventListener('pointerup',eat,{capture:true,once:true});setTimeout(()=>removeEventListener('pointerup',eat,true),1500)}removeEventListener('pointerdown',stop,true);removeEventListener('keydown',stop,true);removeEventListener('wheel',stop,true)};
+ const lon=V.cx*360-180;if(mob())setSheet('p');const pl=panelEl.getBoundingClientRect().left,mw=pl>W/2?pl-8:W;camTo(lon,lat,Math.max(minS(),mob()?H*1.5:mw*1.25));const k=an;setTimeout(()=>{if(SPN&&an===k)camSpin()},950);
+ const eat=ev=>{if(ev.target===cv){ev.stopPropagation();ev.preventDefault()}},stop=e=>{if(e.type==='keydown'&&e.key!=='Escape')return;SPN=0;an++;if(e.type==='pointerdown'&&e.target===cv){e.stopPropagation();e.preventDefault();addEventListener('pointerup',eat,{capture:true,once:true});setTimeout(()=>removeEventListener('pointerup',eat,true),1500)}removeEventListener('pointerdown',stop,true);removeEventListener('keydown',stop,true);removeEventListener('wheel',stop,true)};
  setTimeout(()=>{addEventListener('pointerdown',stop,true);addEventListener('keydown',stop,true);addEventListener('wheel',stop,{capture:true,passive:true})})}
 $('#brand').onclick=brandSpin;$('#brand').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();brandSpin()}};
 const tourCity=n=>byId.get((VLA.find(c=>c[1]===n)||VLA[0])[0]);

@@ -8,7 +8,7 @@ ROADMAP.md 记的是"做过什么、还要做什么"；这份记的是"怎么干
 
 ## 1. 现在的状态（先看这里）
 
-- **线上版本**：0.29（`fernweh-v29`），地址 <https://tantian2005.github.io/Fernweh/>。
+- **线上版本**：0.30（`fernweh-v30`），地址 <https://tantian2005.github.io/Fernweh/>。
 - **0.25 已于 2026-11-14 上线**，涉及 `fernweh.html`、`sw.js`、`ROADMAP.md`。内容是：
   - 自定义地点重写（添加表单、地图大头针、点地图取点、国家候选、设置里的管理页）。
   - 设置首页每一项下面的灰色小字去掉。
