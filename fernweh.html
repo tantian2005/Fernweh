@@ -477,6 +477,94 @@ button.pri,button.wi,.sca button,.sca button.pri,.lgo button,.pcr .pcft button.p
 .rpc button,.rpc button.x{height:var(--cic);min-height:0;display:grid;place-items:center}
 .a2h{display:flex;align-items:center;gap:6px;white-space:nowrap;font-size:14px}.a2h .ic{width:20px;height:20px;color:var(--at)}.a2d{color:var(--at);letter-spacing:1px;font-size:17px}.a2a{color:var(--mut);margin:0 2px}.sfn{margin:6px 12px 0;font-size:12px;line-height:1.5;color:var(--mut)}.card>.st:last-child{border-bottom:0}.dsum svg{width:15px;height:15px;transition:transform .2s}.dsum[aria-expanded=true] svg{transform:rotate(180deg)}button.dsum{width:100%;background:none;box-shadow:none;border-radius:0;padding:10px 0;font:inherit;color:inherit;text-align:left;min-height:0}button.dsum>span:last-child{display:inline-flex;align-items:center;gap:4px}.card>button.dsum:last-child{border-bottom:0}button.bpo{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;color:var(--at)}button.bpo svg{width:18px;height:18px}.dsep{display:inline-block;width:.5px;height:.85em;margin:0 7px;background:currentColor;opacity:.4;vertical-align:-.08em}small{font-size:12px}.li .hr{display:flex;align-items:baseline;gap:8px}.li .hr b{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.li .hr time{flex:none;font-size:12px;color:var(--mut);font-variant-numeric:tabular-nums}html.vpf{height:var(--fullh)}html.vpf body{position:relative;width:100%;height:var(--fullh);transform:translate(0,0);overflow:hidden}html.vpf #map{height:100%}
 html.iosapp .tint{display:none}
+
+/* city page: the name sits on the photo */
+.dt{text-align:left}
+.dt .pic.big{height:236px}
+.dtt{position:absolute;left:0;right:0;bottom:0;padding:56px 16px 14px;border-radius:0 0 20px 20px;background:linear-gradient(180deg,rgba(6,10,20,0),rgba(6,10,20,.42) 45%,rgba(6,10,20,.66));color:#fff;pointer-events:none;text-shadow:0 1px 3px rgba(0,0,0,.35)}
+.dt .dtt h2{margin:0;font-size:24px;line-height:1.2;color:#fff}
+.dtt p{margin:3px 0 0;font-size:14px;color:rgba(255,255,255,.9)}
+.dtt .dsep{opacity:.55}
+.dh button.dpc{top:9px;right:9px;bottom:auto}
+.dh button.dup{top:9px;right:9px;height:var(--cov);padding:0 14px 0 11px;border-radius:999px;display:flex;align-items:center;gap:6px;font-size:14px}
+.dh button.dup svg{width:18px;height:18px}
+.dnp .pic.big{cursor:pointer}
+.dt .cr{margin:6px 4px 0;font-size:12px;color:var(--mut);text-align:right}
+.dt .cr:empty{display:none}
+/* a few numbers */
+.card.dst{display:flex;padding:12px 0;margin-top:12px;text-align:center}
+.dst>div{flex:1;min-width:0}
+.dst>div+div{box-shadow:-.5px 0 0 var(--bd)}
+.dst b{display:block;font-size:24px;font-weight:700;line-height:1.2;color:var(--at);font-variant-numeric:tabular-nums;white-space:nowrap}
+.dst b i{font-style:normal;font-size:14px;font-weight:600;margin-left:3px}
+.dst small{display:block;margin-top:2px;font-size:12px;color:var(--mut)}
+/* the visits, as a line through time */
+.dvs{margin-top:18px}
+.dsh{margin:0 0 4px 4px;font-size:12px;color:var(--mut)}
+.tli,.dt button.tla{position:relative;display:flex;align-items:center;gap:10px;min-height:46px;padding:0 0 0 28px}
+.tli>i,.tla>i{position:absolute;left:5px;top:50%;width:11px;height:11px;margin-top:-5.5px;border-radius:50%;background:rgb(var(--acr));box-shadow:0 0 0 3px rgba(var(--acr),.2)}
+.tli::before,.tla::before{content:'';position:absolute;left:10px;width:1px;top:0;bottom:0;background:rgba(var(--acr),.35)}
+.tli:first-of-type::before{top:50%}
+.dt button.tla::before{bottom:50%}
+.tli.fut>i{background:var(--panel,transparent);box-shadow:inset 0 0 0 2px var(--blue)}
+.tld{position:relative;flex:1;min-width:0;font-size:17px;color:var(--tx);cursor:pointer}
+.tld input{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;border:0;opacity:0;cursor:pointer;-webkit-appearance:none;appearance:none}
+.tli small{flex:none;font-size:12px;color:var(--mut)}
+.tli small.pl{color:var(--blue)}
+.dt .tli button.dg{flex:none;width:var(--cix);height:var(--cix);min-height:0;padding:0;display:grid;place-items:center;border-radius:50%;background:none;box-shadow:none;color:var(--mut)}
+.dt .tli button.dg:hover{color:var(--danger);background:rgba(255,90,80,.09)}
+.dt .tli button.dg svg{width:16px;height:16px}
+.dt button.tla{width:100%;border:0;border-radius:0;background:none;box-shadow:none;color:var(--at);font-size:14px;font-weight:600;text-align:left}
+.dt button.tla>i{background:none;box-shadow:inset 0 0 0 1.5px rgba(var(--acr),.7)}
+.dt button.tla:hover{background:none;opacity:.8}
+/* quiet things at the end */
+.dt .dl{margin-top:16px}
+.dmeta{margin:16px 0 0;font-size:12px;color:var(--mut);text-align:center}
+.dfo{display:flex;justify-content:center;flex-wrap:wrap;gap:0 20px;margin-top:6px}
+.dt .dfo button{min-height:44px;padding:0 4px;border:0;background:none;box-shadow:none;font-size:14px;color:var(--at)}
+.dt .dfo button.dg{color:var(--danger)}
+.dt .dfo button:hover{background:none;opacity:.75}
+@media(max-width:820px) and (orientation:portrait),(max-width:820px) and (min-height:521px){.dt .pic.big{height:220px}}
+
+/* city page, second pass */
+.dh button.dup{width:var(--cov);padding:0;display:grid;place-items:center;border-radius:50%}
+.dh button.dup svg{width:20px;height:20px}
+.dt .cr{margin:10px 0 0;text-align:center}
+.dt .dfo+.cr,.dt .cr:last-child{margin-top:4px}
+.dst b i{font-size:12px}
+.tlb{position:relative;display:flex;align-items:center;gap:8px;min-height:40px;padding-left:28px;font-size:14px;color:var(--mut)}
+.tlb::before{content:'';position:absolute;left:10px;width:1px;top:0;bottom:0;background:rgba(var(--acr),.35)}
+.tlb:first-of-type::before{top:50%}
+.dvs>.tlb:last-child::before{bottom:50%}
+.tlb>i{position:absolute;left:0;top:50%;width:21px;height:21px;margin-top:-10.5px;display:grid;place-items:center;border-radius:50%;background:var(--lg-card);box-shadow:inset 0 0 0 .5px var(--lg-r)}
+.tlb>i svg{width:13px;height:13px;color:rgb(var(--acr))}
+.tlb span{flex:1;min-width:0;color:var(--tx)}
+.tlb small{flex:none;font-size:12px;color:var(--mut);font-variant-numeric:tabular-nums}
+
+/* city page, third pass */
+.dst b.lg{font-size:17px;line-height:1.65}
+.dst small{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:0 6px}
+.tlb span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tlb span b{font-weight:600;color:rgb(var(--acr))}
+.tlb span em{font-style:normal;margin:0 5px;color:var(--mut)}
+[data-theme=light] .tlb span b{color:var(--at)}
+
+/* the order of one day */
+.dt button.tlbd{width:100%;border:0;border-radius:0;background:none;box-shadow:none;text-align:left;font:inherit;font-size:14px;cursor:pointer}
+.dt button.tlbd:hover{background:none}
+.dt button.tlbd span{text-decoration:underline;text-decoration-color:rgba(var(--acr),.45);text-underline-offset:4px;text-decoration-thickness:1px}
+.dt button.tlbd.on span{text-decoration:none}
+.dord{margin:2px 0 8px 28px;padding:8px;border-radius:20px;background:var(--lg-card);box-shadow:inset 0 0 0 .5px var(--lg-r),inset 0 1px 0 var(--lg-sp2)}
+.dor{display:flex;align-items:center;gap:8px;height:44px;padding:0 4px 0 12px;margin-bottom:6px;border-radius:12px;background:var(--lg-f);box-shadow:inset 0 0 0 .5px var(--lg-r);transition:transform .18s;font-size:17px;color:var(--tx)}
+.dor.drag{transition:none;position:relative;z-index:2;box-shadow:inset 0 0 0 .5px var(--lg-r),0 8px 20px rgba(0,0,0,.18)}
+.dorn{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dorn b{font-weight:600}
+.dorh{flex:none;width:40px;height:40px;display:grid;place-items:center;color:var(--mut);cursor:grab;touch-action:none;-webkit-user-select:none;user-select:none}
+.dor.drag .dorh{cursor:grabbing}
+.dorh svg{width:18px;height:18px}
+.dorf{display:flex;justify-content:space-between;gap:8px;margin-top:2px}
+.dt .dorf button{min-height:44px;padding:0 10px;border:0;background:none;box-shadow:none;font-size:14px;color:var(--mut)}
+.dt .dorf button:last-child{color:var(--at);font-weight:600}
 </style></head><body>
 <div id="boot"><b>Fern<i>weh</i></b><span></span><small id="bootm"></small></div><script>(function(){var l='';try{l=localStorage.getItem('fernweh.lang')||((JSON.parse(localStorage.getItem('fernweh.v1'))||{}).set||{}).lang||''}catch(e){}if(!l)l=/^zh/.test(navigator.language||'')?'zh':'en';document.getElementById('bootm').textContent=l==='zh'?'正在载入城市数据…':'Loading city data…';addEventListener('load',function(){var b=document.getElementById('boot');if(!b)return;b.classList.add('off');setTimeout(function(){b.remove()},320)})})()</script>
 <canvas id="map"></canvas><div id="tint" class="tint" aria-hidden="true"></div><div id="tintb" class="tint" aria-hidden="true"></div>
@@ -524,6 +612,7 @@ const norm=()=>{S.ver=VER;S.v=isObj(S.v)?S.v:{};S.w=isObj(S.w)?S.w:{};const had=
 for(const k in DEF){const d=DEF[k],v=S.set[k];if(typeof d==='boolean'){if(typeof v!=='boolean')S.set[k]=d}else if(typeof d==='string'&&(typeof v!=='string'||!/^[\w-]{1,24}$/.test(v)))S.set[k]=d}
 if(!['auto','light','dark'].includes(S.set.theme))S.set.theme='auto';if(!['all','first','last'].includes(S.set.hist))S.set.hist='all';if(!{orange:1,blue:1,green:1,pink:1}[S.set.acc])S.set.acc='orange';if(S.set.base==='dark'||S.set.base==='light')S.set.base='auto';if(S.set.base==='lgray'||S.set.base==='dgray')S.set.base='gray';if(!['zh','en',null].includes(S.set.lang))S.set.lang=null;if(typeof S.set.lastExport!=='string'||!/^\d{4}-\d{2}-\d{2}[\dT:.Z+-]*$/.test(S.set.lastExport))S.set.lastExport=null;if(S.set.fsz!=null&&!['l','s','r'].includes(S.set.fsz))S.set.fsz='l';S.set.home=S.set.home==null||!Number.isFinite(+S.set.home)?null:+S.set.home;if(S.set.card!=null&&!isObj(S.set.card))S.set.card=null;
 for(const i in S.v){const v=S.v[i];if(!isObj(v)){delete S.v[i];continue}if(v.img&&!safeImg(v.img))delete v.img;v.d=isDay(v.d)?v.d:'';if(v.x!==undefined)v.x=Array.isArray(v.x)?v.x.filter(isDay):[];v.n=typeof v.n==='string'?v.n:'';{const a=[v.d,...(v.x||[])].filter(Boolean).sort();if(a.length>1){v.d=a[0];v.x=a.slice(1)}if(v.e!==undefined){const e={};if(isObj(v.e))for(const k of a)if(isDay(v.e[k])&&v.e[k]>k)e[k]=v.e[k];if(Object.keys(e).length)v.e=e;else delete v.e}}}
+S.od=isObj(S.od)?Object.fromEntries(Object.entries(S.od).filter(([d,a])=>isDay(d)&&Array.isArray(a)).map(([d,a])=>[d,[...new Set(a.map(Number).filter(Number.isFinite))]]).filter(([,a])=>a.length>1)):{};
 S.bp=(Array.isArray(S.bp)?S.bp:[]).filter(q=>isObj(q)&&Number.isFinite(+q.id)&&isDay(q.from)&&(q.to==null||isDay(q.to))).map(q=>({id:+q.id,from:q.from,to:q.to||null}));
 S.cu=(Array.isArray(S.cu)?S.cu:[]).filter(r=>isObj(r)&&Number.isFinite(+r.id)&&typeof r.name==='string'&&/^[A-Z]{2}$/.test(r.cc||'')&&Math.abs(+r.lat)<=90&&Math.abs(+r.lon)<=180);
 S.pc=Object.assign({from:'',style:'classic',rec:[],sent:0,log:[]},isObj(S.pc)?S.pc:{});if(typeof S.pc.from!=='string')S.pc.from='';if(!/^\w{1,24}$/.test(S.pc.style||''))S.pc.style='classic';S.pc.sent=numOr(S.pc.sent,0);S.pc.rec=Array.isArray(S.pc.rec)?S.pc.rec:[];S.pc.log=(Array.isArray(S.pc.log)?S.pc.log:[]).filter(e=>isObj(e)&&Number.isFinite(+e.id)).map(e=>Object.assign(e,{id:+e.id,ox:numOr(e.ox,0),oy:numOr(e.oy,0)}))};norm();
@@ -540,7 +629,7 @@ const theme=()=>S.set.theme==='auto'?(mq.matches?'light':'dark'):S.set.theme;
 const SUN='<svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg>',MOON='<svg class="ic" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>';
 function applyTheme(){accCalc();const th=theme(),r=document.documentElement;if(ACW[0]==='2')r.style.setProperty('--blue',th==='light'?'rgb(170,104,0)':'rgb(255,190,92)');else r.style.removeProperty('--blue');r.dataset.theme=th;r.style.colorScheme=th;const b=$('#th');b.innerHTML=th==='light'?MOON:SUN;b.title=th==='light'?tr('切换到深色','Switch to dark'):tr('切换到浅色','Switch to light')}
 let L=S.set.lang;if(!L){try{L=localStorage.getItem('fernweh.lang')}catch(e){}}L=L||((navigator.language||'').startsWith('zh')?'zh':'en');
-const APPV='0.26',APPD='2026-11-15';
+const APPV='0.27',APPD='2026-11-15';
 const tr=(a,b)=>L==='zh'?a:b;const DS='<i class="dsep"></i>',zpT=id=>(ZP[id]||'').replace(/ · /g,''),XI='<svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>',BI='<svg class="ic" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg>',NI='<svg class="ic" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg>';
 applyTheme();
 let DEMO=null,kept=false;const save=()=>{clearTimeout(saveT);saveT=0;if(DEMO)return;stubSave();if(!kept&&Object.keys(S.v).length){kept=true;try{const q=navigator.storage&&navigator.storage.persist&&navigator.storage.persist();if(q&&q.catch)q.catch(()=>{})}catch(_){}}const v={};let hold=0;for(const i in S.v){const o=S.v[i];if(o.img&&PH.have[i]===o.img){const{img,...r}=o;v[i]=r}else{v[i]=o;if(o.img)hold++}}
@@ -678,11 +767,11 @@ const xo=(m,u)=>{try{if(/^https?:/.test(u)&&new URL(u).origin!==location.origin)
 const bpSrc=id=>BP[id]&&BP[id].s;
 const photoOf=c=>{const v=S.v[c[0]];if(v&&v.img)return v.img;return S.set.photo!=='off'&&bpSrc(c[0])||null};
 const hueOf=cc=>(cc.charCodeAt(0)*37+cc.charCodeAt(1)*11)%360,phCache={};
-function phsvg(c){const k=c[0];return phCache[k]||(phCache[k]='data:image/svg+xml;utf8,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" preserveAspectRatio="xMidYMid slice">${scene(c)}</svg>`))}
-const fallback=c=>phsvg(c);
-const img=(c,sz)=>{const p=photoOf(c),big=sz==='d',bd=false;const b=BP[c[0]],hdp=big&&p&&!(S.v[c[0]]&&S.v[c[0]].img)&&b&&b.h||'';return`<img class="${bd?'bd':'pic'}${big?' big':''}" style="--rc:${tier(c)[1]}" ${big?'':`width="${sz}" height="${sz}" loading="lazy" decoding="async"`} data-b="${c[0]}" data-ph="${p?0:1}" ${hdp?`data-fb="${esc(p)}"`:''} alt="${esc(dn(c))}" ${big&&p?`title="${tr('点击放大','Click to enlarge')}"`:''} src="${esc(hdp||p||fallback(c))}">`};
+function phsvg(c,big){const k=c[0]+(big?'b':'');return phCache[k]||(phCache[k]='data:image/svg+xml;utf8,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="${big?'0 34 200 116':'0 0 200 150'}" preserveAspectRatio="xMidYMax slice">${scene(c)}</svg>`))}
+const fallback=(c,big)=>phsvg(c,big);
+const img=(c,sz)=>{const p=photoOf(c),big=sz==='d',bd=false;const b=BP[c[0]],hdp=big&&p&&!(S.v[c[0]]&&S.v[c[0]].img)&&b&&b.h||'';return`<img class="${bd?'bd':'pic'}${big?' big':''}" style="--rc:${tier(c)[1]}" ${big?'':`width="${sz}" height="${sz}" loading="lazy" decoding="async"`} data-b="${c[0]}" data-ph="${p?0:1}" ${hdp?`data-fb="${esc(p)}"`:''} alt="${esc(dn(c))}" ${big&&p?`title="${tr('点击放大','Click to enlarge')}"`:''} src="${esc(hdp||p||fallback(c,big))}">`};
 const creditHtml=id=>{const v=S.v[id],b=BP[id];if(v&&v.img)return tr('我的照片','My photo');if(S.set.photo==='off'||!b)return'';const lk=/^https:\/\//.test(b.p||'')?`<a href="${esc(b.p)}" target="_blank" rel="noopener noreferrer" style="color:var(--blue)">${esc(b.l||tr('来源','Source'))}</a>`:esc(b.l||'');return`${tr('图片','Photo')}${tr('：',': ')}${[b.a&&esc(b.a),lk].filter(Boolean).join(tr('，',', '))}`};
-const fix=()=>document.querySelectorAll('img[data-b]').forEach(e=>{const id=+e.dataset.b;if(e.complete&&e.naturalWidth)e.classList.add('ld');else e.addEventListener('load',()=>e.classList.add('ld'),{once:true});e.onerror=()=>{if(e.dataset.fb){const f=e.dataset.fb;e.dataset.fb='';e.src=f;return}e.onerror=null;e.dataset.ph='1';e.src=fallback(byId.get(id))}});
+const fix=()=>document.querySelectorAll('img[data-b]').forEach(e=>{const id=+e.dataset.b;if(e.complete&&e.naturalWidth)e.classList.add('ld');else e.addEventListener('load',()=>e.classList.add('ld'),{once:true});e.onerror=()=>{if(e.dataset.fb){const f=e.dataset.fb;e.dataset.fb='';e.src=f;return}e.onerror=null;e.dataset.ph='1';e.src=fallback(byId.get(id),e.classList.contains('big'))}});
 /* ---- geometry (antimeridian-safe) ---- */
 const cv=$('#map'),x=cv.getContext('2d'),bc=document.createElement('canvas'),bx=bc.getContext('2d');let W,H,dpr,M,Vb=null;
 const V={s:1000,cx:.53,cy:.34},mx=o=>(o+180)/360,my=a=>{a=Math.max(-85,Math.min(85,a))*Math.PI/180;return .5-Math.log(Math.tan(Math.PI/4+a/2))/(2*Math.PI)};
@@ -729,10 +818,10 @@ const TC=new Map();let td=0,tOK=0,tErr=0;
 function tile(b,z,i,j){const k=b.id+z+'/'+i+'/'+j;let m=TC.get(k);if(!m){m=new Image();m.onload=()=>{m.ok=1;tOK++;clearTimeout(td);td=setTimeout(()=>{rb();req()},60)};m.onerror=()=>{m.err=1;tErr++;req()};m.src=b.u.replace('{z}',z).replace('{x}',i).replace('{y}',j);TC.set(k,m);if(TC.size>400)TC.delete(TC.keys().next().value)}return m}
 function tiles(b,s,w,h){const z=Math.max(0,Math.min(b.mz,Math.round(Math.log2(s/256)))),n=2**z,ts=s/n,y0=Math.max(0,Math.floor((V.cy-h/2/s)*n)),y1=Math.min(n-1,Math.floor((V.cy+h/2/s)*n));
 for(let i=Math.floor((V.cx-w/2/s)*n),i1=Math.floor((V.cx+w/2/s)*n);i<=i1;i++)for(let j=y0;j<=y1;j++){const m=tile(b,z,((i%n)+n)%n,j);if(m.ok)bx.drawImage(m,(i/n-V.cx)*s+w/2,(j/n-V.cy)*s+h/2,ts+.6,ts+.6)}}
-let VL=[],VLA=[],WL=[],RT=[],RB=[],KM=0,YF=null,RP=null,WC=null,THX=null;const THX_MS=450;
+let TPOS=new Map(),VL=[],VLA=[],WL=[],RT=[],RB=[],KM=0,YF=null,RP=null,WC=null,THX=null;const THX_MS=450;
 function refresh(){if(RP)return;TDY=today();VLA=Object.keys(S.v).map(i=>byId.get(+i)).filter(c=>c&&(dates(S.v[c[0]]).length||!adates(S.v[c[0]]).length));const inY=c=>dates(S.v[c[0]]).some(d=>d.slice(0,4)===YF);if(YF&&!VLA.some(inY))YF=null;VL=YF?VLA.filter(inY):VLA;WL=[...new Set([...Object.keys(S.w),...Object.keys(S.v)])].map(i=>byId.get(+i)).filter(c=>c&&!VLA.includes(c));
 /* legs are worked out on the whole timeline, then a year keeps the legs that belong to it */
-const GAP=gapN(),tl=[];tlFill(tl);const yy=d=>d.slice(0,4),legs=[],leg=(q,r,y)=>{if(q&&r&&q!==r)legs.push([q,r,y])},days=(x,y)=>(Date.parse(y)-Date.parse(x))/864e5;
+const GAP=gapN(),tl=[];tlFill(tl);TPOS=new Map(tl.map((t,i)=>[t[0]+'|'+t[1][0],i]));const yy=d=>d.slice(0,4),legs=[],leg=(q,r,y)=>{if(q&&r&&q!==r)legs.push([q,r,y])},days=(x,y)=>(Date.parse(y)-Date.parse(x))/864e5;
 if(tl.length){leg(baseAt(tl[0][0]),tl[0][1],yy(tl[0][0]));for(let i=1;i<tl.length;i++){const[da,a]=tl[i-1],[db,b]=tl[i],far=days(da,db)>GAP,ba=far?baseAt(da):null,bb=far?baseAt(db):null;if(ba||bb){const hop=[a,ba,bb,b].filter(Boolean);hop.slice(1).forEach((q,k)=>leg(hop[k],q,k?yy(db):yy(da)))}else leg(a,b,yy(db))}const[dl,cl]=tl[tl.length-1];if(days(dl,today())>GAP)leg(cl,baseAt(dl),yy(dl))}
 RT=[];KM=0;const onV=new Set(VL.map(c=>c[0])),pair=new Set,hub=new Set;for(const[q,r,y]of legs){if(YF&&y!==YF)continue;KM+=hav(q,r);const k=q[0]+'/'+r[0];if(pair.has(k))continue;pair.add(k);RT.push([q,r]);for(const e of[q,r])if(!onV.has(e[0]))hub.add(e)}RB=[...hub]}refresh();
 /* cached base layer: countries / provinces / tiles */
@@ -901,14 +990,14 @@ const rowh=(c,d,full)=>{const ph=S.set.histPhoto;return`<div class="li h${ph?'':
 function row(c){const v=S.v[c[0]];return`<div class="li" data-a="open" data-v="${c[0]}">${flag(E(c),20)}<div class="g"><b>${esc(dn(c))}</b><small>${esc(sub(c))}${v&&v.d?DS+v.d:''}</small></div>${v?'<span style="color:var(--at)">✓</span>':S.w[c[0]]?'<span style="color:var(--blue)">♡</span>':'<span class="mut">+</span>'}</div>`}
 function tabLens(){const on=$('#tabs button.on'),l=$('#tl');if(on){l.style.opacity=1;l.style.width=on.offsetWidth+'px';l.style.transform=`translateX(${on.offsetLeft}px)`}else l.style.opacity=0}
 const pcvSync=()=>rootEl.classList.toggle('pcv',T==='foot'&&FV.m==='p'&&SEL==null);
-let DSEL=null,DNEW=null;
+let DSEL=null,DNEW=null,DORD=null;
 function render(){if(DSEL!=null&&DSEL!==SEL&&S.v[DSEL]&&dsort(S.v[DSEL]))saveSoon();DSEL=SEL;if(T!=='map'){QF=false;Q=''}pcvSync();applyTheme();mxSync(bs());const tn={map:tr('探索','Explore'),foot:tr('足迹','Footprints'),stats:tr('统计','Stats'),set:tr('设置','Settings')},zl={zi:tr('放大','Zoom in'),zo:tr('缩小','Zoom out'),th:$('#th').title,ly:tr('图层','Layers')};document.querySelectorAll('#tabs button').forEach((b,i)=>{const t=tn[b.dataset.t];b.classList.toggle('on',b.dataset.t===T&&SEL==null);b.setAttribute('aria-label',t);b.title=`${t} (${i+1})`;let sp=b.querySelector('span');if(!sp)b.appendChild(sp=document.createElement('span'));sp.textContent=t;b.classList.toggle('dot',b.dataset.t==='set'&&bkDue())});for(const k in zl){const b=$('#'+k);b.setAttribute('aria-label',zl[k]);b.title=zl[k]}tabLens();document.documentElement.classList.toggle('lite',!!S.set.lite);document.documentElement.lang=L;document.title=tr('Fernweh 足迹','Fernweh');if(SEL!=null)detail();else({map:vMap,foot:vFoot,stats:vStats,set:vSet})[T]();fix();ybar();if(mob()&&SEL!=null&&shs==='p')setSheet('h');pcThumbs();if(!DEMO)try{YF?localStorage.setItem('fernweh.year',YF):localStorage.removeItem('fernweh.year')}catch(e){}}
 function vMap(){if(CF&&CF.src==='q'){el.innerHTML=placeForm();return}const on=QF||!!Q.trim();el.innerHTML=(on?`<div class="qw"><input id="q" placeholder="${tr('搜索城市','Search cities')}" value="${esc(Q)}" autocomplete="off"><button class="qadd" data-a="qtog" aria-label="${tr('关闭搜索','Close search')}" title="${tr('关闭搜索','Close search')}"><svg class="ic" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button></div>`:'')+`<div id="res"></div>`;if(on)$('#q').oninput=e=>{Q=e.target.value;res()};res()}
 document.addEventListener('keydown',e=>{if(!QF||e.key!=='Escape'||T!=='map'||SEL!=null)return;QF=false;Q='';vMap()},true);
 /* the largest places in view that are not visited yet; the list is in population order already */
 function mapTop(n=8){const pw=mob()?0:innerWidth-panelEl.getBoundingClientRect().left,out=[];for(const i of inView(C.length)){const c=C[i];if(S.v[c[0]])continue;const X=((sx(c)%V.s)+V.s)%V.s,Y=sy(c);if(X<0||X>W-pw||Y<0||Y>H)continue;out.push(c);if(out.length>=n)break}return out}
 const nz=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
-function res(){const q=nz(Q.trim()),o=$('#res');if(!q&&QF){const top=mapTop();o.innerHTML=`<div class="sec"><span>${tr('地图上的大城市','Big cities on the map')}</span><span>${top.length}</span></div>`+(top.map(row).join('')||`<p class="mut" style="padding:20px 6px">${tr('这片区域没有更多城市','No more cities in this area')}</p>`);return}if(!q){const hm=S.set.hist,r=[],up=[];VL.forEach(c=>{const ds=dates(S.v[c[0]]).filter(d=>!YF||d.slice(0,4)===YF).sort();if(!ds.length)r.push(['',c]);else if(hm==='first')r.push([ds[0],c]);else if(hm==='last')r.push([ds[ds.length-1],c]);else ds.forEach(d=>r.push([d,c]))});r.sort((a,b)=>b[0].localeCompare(a[0])||a[1][1].localeCompare(b[1][1]));
+function res(){const q=nz(Q.trim()),o=$('#res');if(!q&&QF){const top=mapTop();o.innerHTML=`<div class="sec"><span>${tr('地图上的大城市','Big cities on the map')}</span><span>${top.length}</span></div>`+(top.map(row).join('')||`<p class="mut" style="padding:20px 6px">${tr('这片区域没有更多城市','No more cities in this area')}</p>`);return}if(!q){const hm=S.set.hist,r=[],up=[];VL.forEach(c=>{const ds=dates(S.v[c[0]]).filter(d=>!YF||d.slice(0,4)===YF).sort();if(!ds.length)r.push(['',c]);else if(hm==='first')r.push([ds[0],c]);else if(hm==='last')r.push([ds[ds.length-1],c]);else ds.forEach(d=>r.push([d,c]))});r.sort((a,b)=>b[0].localeCompare(a[0])||(TPOS.get(b[0]+'|'+b[1][0])||0)-(TPOS.get(a[0]+'|'+a[1][0])||0)||a[1][1].localeCompare(b[1][1]));
 /* dates after today are plans: listed first, soonest on top, and left out of the statistics */
 if(!YF)for(const i in S.v){const c=byId.get(+i);if(c)adates(S.v[i]).forEach(d=>{if(d>TDY)up.push([d,c])})}up.sort((a,b)=>a[0].localeCompare(b[0]));
 o.innerHTML=r.length||up.length?`<div class="sec qh"><span>${tr('历史足迹','History')}${YF?DS+YF:''} <em>${VL.length}</em></span><span><button class="qx2" data-a="replay"><svg class="ic" viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg>${tr('回放','Replay')}</button><button class="qadd" data-a="qtog" aria-label="${tr('添加城市','Add a city')}" title="${tr('添加城市','Add a city')}"><svg class="ic" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button></span></div>`+(up.length?`<div class="mh">${tr('即将出发','Upcoming')}</div>`+up.map(([d,c])=>rowh(c,d,1)).join(''):'')+r.map(([d,c],i)=>{const m=d.slice(0,7),pm=i?r[i-1][0].slice(0,7):null;return(i&&m===pm?'':`<div class="mh">${m||tr('未记日期','No date')}</div>`)+rowh(c,d)}).join(''):(`<div class="empty"><big>🧭</big>${tr('还没有足迹','No footprints yet')}<button class="pri" data-a="qtog">${tr('添加城市','Add a city')}</button><button class="qdemo" data-a="qimp">${tr('批量导入','Import a list')}</button><button class="qdemo" data-a="demo">${tr('查看演示','View demo')}</button></div>`);return}
@@ -1002,11 +1091,69 @@ lab:()=>`<div class="sec"><span>${tr('城市照片','City photos')}</span></div>
 if(SP===null||!pg[SP]){el.innerHTML=bkCard()+SPG.map(([gz,ge,ks])=>`<div class="sec"><span>${tr(gz,ge)}</span></div><div class="card sgp">${ks.filter(k=>k!=='install'||!standalone()).map(k=>{const m=SPM.find(x=>x[0]===k),act=k==='demo'?`data-a="demo"`:k==='install'?`data-a="inst"`:`data-a="sp" data-v="${k}"`,ttl=k==='demo'&&DEMO?tr('退出演示','Exit demo'):k==='install'&&!IOS()&&!matchMedia('(pointer:coarse)').matches?tr('安装应用','Install app'):tr(m[1],m[2]);return`<div class="li sp" ${act}><span class="spi"><svg class="ic" viewBox="0 0 24 24">${SPI[k]}</svg></span><div class="g"><b>${ttl}${k==='lab'?'<span class="lab">LAB</span>':''}</b></div>${act.startsWith('data-a="sp"')?`<span class="mut chev">${NI}</span>`:''}</div>`}).join('')}</div>`).join('')}
 else{const m=SPM.find(x=>x[0]===SP);el.innerHTML=`<div class="hh sphh"><button class="bk" data-a="spback">${BI}${tr('设置','Settings')}</button><b class="sph">${tr(m[1],m[2])}</b><span></span></div>`+pg[SP]()}}
 /* city detail */
-function detail(){if(DNEW!==SEL)DNEW=null;if(S.v[SEL]&&dsort(S.v[SEL]))saveSoon();const c=byId.get(SEL),v=S.v[SEL],[id,nm,,la,lo,pop]=c,cc=E(c),ti=tier(c),ds=v?(adates(v).length?adates(v).concat(DNEW===SEL?['']:[]):['']):[];
-el.innerHTML=`<div class="dt"><div class="dh">${img(c,'d')}<button class="dbk" data-a="back" aria-label="${tr('返回','Back')}">${BI}</button>${v?`<button class="dpc" data-a="pc" aria-label="${tr('明信片','Postcard')}" title="${tr('明信片','Postcard')}"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></button>`:''}</div><p class="mut sm cr" id="cr">${creditHtml(id)}</p><h2>${esc(dn(c))}</h2><p class="mut">${esc(alt(c))}${alt(c)?DS:''}${flag(cc,13)} ${esc(cn(cc))}${L==='zh'&&ZP[id]?DS+esc(zpT(id)):''}${DS}${cnm(cont(cc))}</p><p class="mut sm">${la.toFixed(2)}°, ${lo.toFixed(2)}°${pop>0?`${DS}${tr('人口','Pop.')} ${pop.toLocaleString()}<span class="tier" style="color:${ti[1]}">${L==='zh'?ti[2]:ti[3]}</span>`:''}</p>${!v?'':photoOf(c)?`<button class="pcm" data-a="pc"><canvas data-pcm="${id}" width="300" height="200"></canvas><span class="g"><b>${tr('寄一张明信片','Send a postcard')}</b></span><span class="mut chev">${NI}</span></button>`:`<button class="pcm" data-a="up"><span class="pcu"><svg class="ic" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.5"/></svg></span><span class="g"><b>${tr('上传自己拍的照片','Upload a photo you took')}</b></span><span class="mut chev">${NI}</span></button>`}`+
-(v?`<div class="dl">${tr('到访记录','Visits')}${ds.map((d,i)=>`<div class="row"><input type="date" data-di="${i}" value="${d}">${d>TDY?`<small class="pl">${tr('计划','Planned')}</small>`:v.e&&v.e[d]>d?(n=>`<small class="sd">${tr(n+' 天',n+' days')}</small>`)(Math.round((Date.parse(v.e[d])-Date.parse(d))/864e5)+1):''}<button class="dg" data-a="ddel" data-v="${i}" aria-label="${tr('删除','Delete')}">${XI}</button></div>`).join('')}<button data-a="dadd" style="width:100%">+ ${tr('再记一次到访','Add another visit')}</button></div>
-<label class="dl">${tr('笔记','Notes')}<textarea id="nn" rows="3" placeholder="${tr('写点什么…','Write something…')}">${esc((v.n||'').replace(/(原记录：|Original entry: )/g,tr('原记录：','Original entry: ')))}</textarea></label><div class="dact"><button data-a="up">${v.img?tr('更换我的照片','Change my photo'):tr('上传我的照片','Upload my photo')}</button>${v.img?`<button data-a="rst">${tr('用回内置照片','Use built-in')}</button>`:''}<button class="dg" data-a="del">${tr('删除足迹','Delete')}</button></div><input type="file" id="fi" accept="image/*" hidden>`
-:`<button class="pri" data-a="mark">${tr('标记为已去过','Mark as visited')}</button><button class="wi ${S.w[id]?'on':''}" data-a="wish">${S.w[id]?'♥ '+tr('移出想去清单','Remove from wishlist'):'♡ '+tr('加入想去清单','Add to wishlist')}</button>`)+(id>=9e8?`<button class="gh2" data-a="cfedit" data-v="${id}">${tr('修改这个地点','Edit this place')}</button>`:'')+`</div>`}
+/* a date as people write it */
+const dfm=d=>{if(!d)return tr('选择日期','Pick a date');const[y,m,dd]=d.split('-').map(Number);return L==='zh'?`${y}年${m}月${dd}日`:new Date(Date.UTC(y,m-1,dd)).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'})};
+function detail(){if(DNEW!==SEL)DNEW=null;if(DORD&&!DORD.startsWith(SEL+'|'))DORD=null;if(S.v[SEL]&&dsort(S.v[SEL]))saveSoon();const c=byId.get(SEL),v=S.v[SEL],[id,nm,,la,lo,pop]=c,cc=E(c),ti=tier(c),ds=v?(adates(v).length?adates(v).concat(DNEW===SEL?['']:[]):['']):[];
+const ph=photoOf(c),past=v?dates(v).slice().sort():[],bi=S.set.photo!=='off'&&bpSrc(id);
+const meta=`<p class="dmeta">${la.toFixed(2)}°, ${lo.toFixed(2)}°${pop>0?`${DS}${tr('人口','Pop.')} ${pop.toLocaleString()}<span class="tier" style="color:${ti[1]}">${L==='zh'?ti[2]:ti[3]}</span>`:''}</p>`;
+const td=today(),dd=(x,y)=>Math.round((Date.parse(y)-Date.parse(x))/864e5),fut=v?adates(v).filter(d=>d>TDY).sort():[],own=(S.bp||[]).filter(q=>q.id===id).sort((a,b)=>a.from<b.from?-1:1),isHome=S.set.home===id;
+const ym=d=>{const[y,m]=d.split('-').map(Number);return L==='zh'?`${y}年${m}月`:new Date(Date.UTC(y,m-1,1)).toLocaleDateString('en-GB',{month:'short',year:'numeric',timeZone:'UTC'})};
+const ordn=n=>{const a=['th','st','nd','rd'],k=n%100;return n+'<i>'+(a[(k-20)%10]||a[k]||a[0])+'</i>'};
+const TL=[];if(v)tlFill(TL);
+/* the numbers: every fact the records give about this city, with a weight; the three that weigh most are shown */
+const nums=[],num=(w,b,t)=>nums.push([w,b,t]),sn=q=>esc(dn(q).split(',')[0]),kmB=km=>fd(km).replace(/ (\S+)$/,'<i>$1</i>'),
+ popB=n=>L==='zh'?(n>=1e4?Math.round(n/1e4).toLocaleString()+'<i>万人</i>':n.toLocaleString()+'<i>人</i>'):(n>=1e6?(n/1e6).toFixed(1)+'<i>M</i>':n>=1e3?Math.round(n/1e3)+'<i>K</i>':String(n));
+if(v){if(fut[0]){const n=Math.max(0,dd(td,fut[0]));num(100,n,tr('天后出发',n===1?'day to go':'days to go'))}
+ const lived=own.reduce((t,q)=>t+Math.max(0,dd(q.from,(q.to&&q.to<td?q.to:td))+1),0);if(lived>0)num(96,...(lived>=365?[Math.round(lived/36.5)/10,tr('年住在这里','years lived here')]:lived>=60?[Math.round(lived/30.4),tr('个月住在这里','months lived here')]:[lived,tr('天住在这里','days lived here')]));
+ if(past.length>1)num(80+Math.min(past.length,10),past.length,tr('次到访','visits'));
+ const sd=v.e?Object.keys(v.e).reduce((t,k)=>t+(v.e[k]>k&&k<=TDY?dd(k,v.e[k])+1:0),0):0;if(sd>1)num(70,sd,tr('天停留','days stayed'));
+ const pcn=((S.pc||{}).log||[]).filter(e=>e.id===id).length;if(pcn)num(72,pcn,tr('张明信片','postcards'));
+ if(past.length>1){const n=dd(past[past.length-1],td),q=n<60?[n,tr('天前','days ago')]:n<730?[Math.round(n/30.4),tr('个月前','months ago')]:[Math.floor(n/365),tr('年前','years ago')];num(58,q[0]+'<i>'+q[1]+'</i>',tr('上次到访','Last visit'));
+  const sp=+past[past.length-1].slice(0,4)-+past[0].slice(0,4);if(sp>=2)num(52,sp+'<i>'+tr('年','yrs')+'</i>',tr('第一次到最近一次','First to latest'))}
+ if(past[0]){/* where this city stands among all of them */
+  const vis=[],cf={};for(const k in S.v){const f=dates(S.v[k]).sort()[0],q=byId.get(+k);if(!f||!q)continue;vis.push([q,f]);const e=E(q);if(!cf[e]||f<cf[e])cf[e]=f}
+  const cr=vis.filter(([q,f])=>f<past[0]||(f===past[0]&&q[0]<id)).length+1,ci=cf[cc]===past[0]?Object.values(cf).sort().indexOf(past[0])+1:0,N=vis.length;
+  num(cr===1?92:cr%100===0||(cr<=50&&cr%10===0)?86:20,L==='zh'?`<i>第</i>${cr}<i>座</i>`:ordn(cr),tr('到访的城市','city visited'));
+  if(ci)num(ci===1?40:76,L==='zh'?`<i>第</i>${ci}<i>个</i>`:ordn(ci),tr('到访的国家/地区','country visited'));
+  if(N>=5){const ext=(f,w,b,t)=>{if(vis.every(([q])=>f(q)<=f(c)))num(w,b,t)};
+   ext(q=>q[3],84,Math.abs(la).toFixed(1)+'°<i>'+(la>=0?'N':'S')+'</i>',tr('最北的足迹','Farthest north'));
+   ext(q=>-q[3],84,Math.abs(la).toFixed(1)+'°<i>'+(la>=0?'N':'S')+'</i>',tr('最南的足迹','Farthest south'));
+   ext(q=>q[4],78,Math.abs(lo).toFixed(1)+'°<i>'+(lo>=0?'E':'W')+'</i>',tr('最东的足迹','Farthest east'));
+   ext(q=>-q[4],78,Math.abs(lo).toFixed(1)+'°<i>'+(lo>=0?'E':'W')+'</i>',tr('最西的足迹','Farthest west'));
+   if(pop>0){ext(q=>q[5]||0,82,popB(pop),tr('去过的最大城市','Largest city visited'));ext(q=>-(q[5]||9e9),74,popB(pop),tr('去过的最小地方','Smallest place visited'))}}
+  const b0=baseAt(past[0]);if(b0&&b0[0]!==id){const k0=hav(b0,c);if(N>=5&&vis.every(([q,f])=>{const bq=baseAt(f);return!bq||hav(bq,q)<=k0}))num(88,kmB(k0),tr('离基地最远的一站','Farthest from home'))}
+  const nr=vis.filter(([q,f])=>E(q)===cc&&(f<past[0]||(f===past[0]&&q[0]<id))).length+1;if(nr>1&&nr!==cr)num(44,L==='zh'?`<i>第</i>${nr}<i>座</i>`:ordn(nr),tr(`${esc(cn(cc))}的城市`,`place in ${esc(cn(cc))}`));
+  /* a new continent; the first time south of the equator */
+  const kf={};vis.forEach(([q,f])=>{const k=cont(E(q));if(!kf[k]||f<kf[k][0]||(f===kf[k][0]&&q[0]<kf[k][1]))kf[k]=[f,q[0]]});const kc=cont(cc);if(kf[kc]&&kf[kc][1]===id){const kn=Object.values(kf).filter(x=>x[0]<past[0]||(x[0]===past[0]&&x[1]<id)).length+1;num(kn===1?38:83,L==='zh'?`<i>第</i>${kn}<i>个</i>`:ordn(kn),tr('到访的大洲','continent visited'))}
+  if(la<0&&vis.some(([q,f])=>q[3]>=0&&f<past[0])&&vis.every(([q,f])=>q[3]>=0||q[0]===id||f>past[0]||(f===past[0]&&q[0]>id)))num(81,tr('南半球','South'),tr('第一次到达','First time south of the equator'));
+  /* the trip it was part of: stops no more than the gap apart */
+  const ti=TL.findIndex(t=>t[0]===past[0]&&t[1][0]===id);if(ti>=0){const G=gapN(),gp=k=>(Date.parse(TL[k][0])-Date.parse(TL[k-1][0]))/864e5>G;let a0=ti,a1=ti;while(a0>0&&!gp(a0))a0--;while(a1<TL.length-1&&!gp(a1+1))a1++;
+   const st=[];for(let k=a0;k<=a1;k++)if(!st.length||st[st.length-1]!==TL[k][1])st.push(TL[k][1]);const M=st.length,pos=st.indexOf(c)+1,tdays=dd(TL[a0][0],TL[a1][0])+1;
+   if(M>=2&&pos)num(M>=3?62:46,L==='zh'?`<i>第</i>${pos}<i>站</i>`:pos+'<i>/'+M+'</i>',tr(`共 ${M} 站的旅程`,`Stop on a ${M}-stop trip`));if(M>=2&&tdays>=3)num(48,tdays+'<i>'+tr('天','days')+'</i>',tr('那趟旅程','That trip'))}
+  num(30,past[0].slice(0,4),past.length>1?tr('第一次','First visit'):tr('到访那年','Year visited'));
+  if(pop>0)num(10,popB(pop),tr('人口','Population'));num(4,Math.abs(la).toFixed(1)+'°<i>'+(la>=0?'N':'S')+'</i>',tr('纬度','Latitude'))}}
+nums.sort((a,b)=>b[0]-a[0]);
+/* where each visit came from: the same rule as the lines on the map; a day with several places shows the whole day */
+const HOU='<svg class="ic" viewBox="0 0 24 24"><path d="M4 11.5 12 5l8 6.5"/><path d="M6.5 10v9h11v-9"/></svg>',GOI='<svg class="ic" viewBox="0 0 24 24"><path d="M5 12h12M13 7l5 5-5 5"/></svg>',
+ bnode=(t,sm,ic)=>`<div class="tlb"><i>${ic||HOU}</i><span>${t}</span>${sm?`<small>${sm}</small>`:''}</div>`;
+const ownNode=q=>bnode(tr('住在这里','Lived here'),ym(q.from)+' – '+(q.to?ym(q.to):tr('至今','now')));
+const fromNode=d=>{const i=TL.findIndex(t=>t[0]===d&&t[1][0]===id);if(i<0)return'';const f=legFrom(TL,i);if(!f||f[0]===id)return'';const home=baseAt(d)===f,day=TL.filter(t=>t[0]===d).map(t=>t[1]);
+ let txt;if(day.length>1){const k=TL.findIndex(t=>t[0]===d),f0=legFrom(TL,k),ch=(f0&&f0!==day[0]?[f0]:[]).concat(day);txt=ch.map(q=>q[0]===id?`<b>${sn(q)}</b>`:sn(q)).join('<em>→</em>')}else txt=tr(`从${sn(f)}出发`,`From ${sn(f)}`);
+ if(day.length<2)return bnode(txt,fd(hav(f,c)),home?HOU:GOI);const on=DORD===id+'|'+d;
+ return`<button class="tlb tlbd${on?' on':''}" data-a="dord" data-v="${d}" aria-expanded="${on}"><i>${home?HOU:GOI}</i><span>${txt}</span><small>${fd(hav(f,c))}</small></button>`+(on?dordEd(d,day):'')};
+/* the order of the places of one day: drag a row by its handle */
+const dordEd=(d,day)=>`<div class="dord" data-d="${d}">${day.map(q=>`<div class="dor" data-id="${q[0]}"><span class="dorn">${flag(E(q),13)} ${q[0]===id?`<b>${sn(q)}</b>`:sn(q)}</span><span class="dorh" data-dh="1" role="button" aria-label="${tr('拖动调整顺序','Drag to reorder')}"><svg class="ic" viewBox="0 0 24 24"><path d="M5 8h14M5 12h14M5 16h14"/></svg></span></div>`).join('')}<div class="dorf"><button data-a="dordr" data-v="${d}">${tr('按距离排序','Sort by distance')}</button><button data-a="dord" data-v="${d}">${tr('完成','Done')}</button></div></div>`;
+const tline=()=>{let o='',oi=0;if(isHome&&!own.length)o+=bnode(tr('基地城市','Home base'),'');
+ ds.forEach((d,i)=>{while(d&&oi<own.length&&own[oi].from<=d)o+=ownNode(own[oi++]);if(d&&d<=TDY)o+=fromNode(d);
+  o+=`<div class="tli${d>TDY?' fut':''}"><i></i><label class="tld"><span>${dfm(d)}</span><input type="date" data-di="${i}" value="${d}" aria-label="${tr('到访日期','Visit date')}"></label>${d?stay(d):''}<button class="dg" data-a="ddel" data-v="${i}" aria-label="${tr('删除','Delete')}">${XI}</button></div>`});
+ while(oi<own.length)o+=ownNode(own[oi++]);return o};
+const stay=d=>d>TDY?`<small class="pl">${tr('计划','Planned')}</small>`:v.e&&v.e[d]>d?(n=>`<small class="sd">${tr(n+' 天',n+' days')}</small>`)(Math.round((Date.parse(v.e[d])-Date.parse(d))/864e5)+1):'';
+el.innerHTML=`<div class="dt"><div class="dh${v&&!ph?' dnp':''}">${img(c,'d')}<div class="dtt"><h2>${esc(dn(c))}</h2><p>${alt(c)?esc(alt(c))+DS:''}${flag(cc,13)} ${esc(cn(cc))}${L==='zh'&&ZP[id]?DS+esc(zpT(id)):''}${DS}${cnm(cont(cc))}</p></div><button class="dbk" data-a="back" aria-label="${tr('返回','Back')}">${BI}</button>${!v?'':ph?`<button class="dpc" data-a="pc" aria-label="${tr('明信片','Postcard')}" title="${tr('明信片','Postcard')}"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></button>`:`<button class="dup" data-a="up" aria-label="${tr('添加照片','Add a photo')}" title="${tr('添加照片','Add a photo')}"><svg class="ic" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.5"/></svg></button>`}</div>`+
+(v?`${nums.length?`<div class="card dst">${nums.slice(0,3).map(([,b,t])=>`<div><b${String(b).replace(/<[^>]*>/g,'').length>6?' class="lg"':''}>${b}</b><small>${t}</small></div>`).join('')}</div>`:''}
+${ph?`<button class="pcm" data-a="pc"><canvas data-pcm="${id}" width="300" height="200"></canvas><span class="g"><b>${tr('寄一张明信片','Send a postcard')}</b></span><span class="mut chev">${NI}</span></button>`:''}
+<div class="dvs"><p class="dsh">${tr('到访记录','Visits')}</p>${tline()}<button class="tla" data-a="dadd"><i></i>${tr('再记一次到访','Add another visit')}</button></div>
+<label class="dl">${tr('笔记','Notes')}<textarea id="nn" rows="3" placeholder="${tr('写点什么…','Write something…')}">${esc((v.n||'').replace(/(原记录：|Original entry: )/g,tr('原记录：','Original entry: ')))}</textarea></label>${meta}<div class="dfo"><button data-a="up">${!ph?tr('添加我的照片','Add my photo'):v.img?tr('更换我的照片','Change my photo'):tr('换成我的照片','Use my own photo')}</button>${v.img?`<button data-a="rst">${bi?tr('用回内置照片','Use built-in'):tr('移除我的照片','Remove my photo')}</button>`:''}<button class="dg" data-a="del">${tr('删除足迹','Delete')}</button></div><input type="file" id="fi" accept="image/*" hidden>`
+:`${own.length||isHome?`<div class="dvs">${tline()}</div>`:''}${meta}<button class="pri" data-a="mark">${tr('标记为已去过','Mark as visited')}</button><button class="wi ${S.w[id]?'on':''}" data-a="wish">${S.w[id]?'♥ '+tr('移出想去清单','Remove from wishlist'):'♡ '+tr('加入想去清单','Add to wishlist')}</button>`)+(id>=9e8?`<button class="gh2" data-a="cfedit" data-v="${id}">${tr('修改这个地点','Edit this place')}</button>`:'')+`<p class="cr" id="cr">${creditHtml(id)}</p></div>`}
 const setDates=(v,arr)=>{arr=arr.length?arr:[''];v.d=arr[0];v.x=arr.slice(1);save();touch()};
 function setv(k,v){if(k==='theme'){themeShow(()=>{S.set.theme=v;save();applyTheme();touch();keep(render)});return}if(k==='lang'){L=v;S.set.lang=v}else S.set[k]=v==='true'?true:v==='false'?false:v;if(k==='acc')accCalc();save();applyTheme();touch();keep(render)}
 /* phones: hand the file to the share sheet (Save to Files, iCloud Drive); elsewhere, or when sharing is refused, download it */
@@ -1073,7 +1220,10 @@ function todayBase(){return baseAt(todayStr())}
 /* every dated visit in date order. Visits on the same day go nearest first, starting from where the day before ended, or from the base when the route comes back through it */
 function tlFill(tl){VLA.forEach(c=>dates(S.v[c[0]]).forEach(d=>tl.push([d,c])));tl.sort((a,b)=>a[0]<b[0]?-1:a[0]>b[0]?1:0);const G=gapN();
  for(let i=0;i<tl.length;){let j=i+1;while(j<tl.length&&tl[j][0]===tl[i][0])j++;if(j-i>1){const far=!i||(Date.parse(tl[i][0])-Date.parse(tl[i-1][0]))/864e5>G;let p=far&&baseAt(tl[i][0])||(i?tl[i-1][1]:null);
-  for(let k=i;k<j-1&&p;k++){let b=k;for(let m=k+1;m<j;m++)if(hav(p,tl[m][1])<hav(p,tl[b][1]))b=m;if(b!==k){const t=tl[k];tl[k]=tl[b];tl[b]=t}p=tl[k][1]}}i=j}}
+  for(let k=i;k<j-1&&p;k++){let b=k;for(let m=k+1;m<j;m++)if(hav(p,tl[m][1])<hav(p,tl[b][1]))b=m;if(b!==k){const t=tl[k];tl[k]=tl[b];tl[b]=t}p=tl[k][1]}
+  const o=S.od&&S.od[tl[i][0]];if(o){const seg=tl.slice(i,j),ix=t=>{const n=o.indexOf(t[1][0]);return n<0?1e9:n};seg.forEach((t,n)=>t.n=n);seg.sort((a,b)=>ix(a)-ix(b)||a.n-b.n);seg.forEach((t,n)=>{delete t.n;tl[i+n]=t})}}i=j}}
+/* the place the line into stop i comes from, the same rule as in refresh(): the previous stop, or the base when the visits are more than the gap apart */
+function legFrom(tl,i){if(!i)return baseAt(tl[0][0]);const[da,a]=tl[i-1],[db]=tl[i];if((Date.parse(db)-Date.parse(da))/864e5>gapN())return baseAt(db)||baseAt(da)||a;return a}
 /* days between two visits before the route goes back through the base: 1 to 15 */
 function gapN(){const n=Math.round(+S.set.gap);return n>=1?Math.min(15,n):7}
 const gapLbl=()=>{const n=gapN();return tr(n+' 天',n+(n>1?' days':' day'))},gapTxt=()=>{const n=gapN();return tr(`相隔超过 ${n} 天的两次到访，路线会经过当时的基地`,`Visits more than ${n} day${n>1?'s':''} apart route through the base at that time`)};
@@ -1094,7 +1244,7 @@ function pxTiff(dv){const le=dv.getUint16(0)===0x4949,n=dv.byteLength,u16=p=>dv.
  const rat=(e,k)=>{const q=u32(e+8)+k*8;return q+8>n?NaN:u32(q)/u32(q+4)},str=(e,len)=>{const c=u32(e+4),q=c>4?u32(e+8):e+8;let t='';for(let i=0;i<Math.min(c,len)&&q+i<n;i++)t+=String.fromCharCode(dv.getUint8(q+i));return t};
  const a=ifd(u32(4)),out={};let day='';
  if(a[0x8825]){const g=ifd(u32(a[0x8825]+8));if(g[2]&&g[4]){const dms=e=>rat(e,0)+rat(e,1)/60+rat(e,2)/3600;let la=dms(g[2]),lo=dms(g[4]);if(g[1]&&str(g[1],1)==='S')la=-la;if(g[3]&&str(g[3],1)==='W')lo=-lo;if(Number.isFinite(la)&&Number.isFinite(lo)&&Math.abs(la)<=90&&Math.abs(lo)<=180&&(la||lo)){out.lat=la;out.lon=lo}}if(g[0x1d])day=str(g[0x1d],10)}
- let t='';if(a[0x8769]){const x=ifd(u32(a[0x8769]+8));if(x[0x9003])t=str(x[0x9003],10);else if(x[0x9004])t=str(x[0x9004],10)}if(!t&&a[0x132])t=str(a[0x132],10);if(/^\d{4}:\d{2}:\d{2}$/.test(t))day=t;
+ let t='';if(a[0x8769]){const x=ifd(u32(a[0x8769]+8));if(x[0x9003])t=str(x[0x9003],19);else if(x[0x9004])t=str(x[0x9004],19)}if(!t&&a[0x132])t=str(a[0x132],19);if(/^\d{4}:\d{2}:\d{2}/.test(t)){day=t.slice(0,10);if(/^\d{2}:\d{2}:\d{2}$/.test(t.slice(11,19)))out.t=t.slice(11,19)}
  out.d=/^\d{4}:\d{2}:\d{2}$/.test(day)?day.replace(/:/g,'-'):'';return out}
 /* JPEG and HEIC both carry "Exif\0\0" followed by a TIFF header; look for that in the first part of the file */
 function pxExif(buf){const b=new Uint8Array(buf),dv=new DataView(buf);for(let i=0;i+14<b.length;i++){if(b[i]!==0x45||b[i+1]!==0x78||b[i+2]!==0x69||b[i+3]!==0x66||b[i+4]||b[i+5])continue;const o=i+6,m=dv.getUint16(o);if((m===0x4949&&dv.getUint16(o+2,true)===42)||(m===0x4d4d&&dv.getUint16(o+2)===42)){try{return pxTiff(new DataView(buf,o))}catch(_){return null}}}return null}
@@ -1106,24 +1256,26 @@ async function pxFiles(files,inp){files=files.filter(f=>!f.type||/^image\//.test
  for(let i=0;i<N;i+=K){await Promise.all(files.slice(i,i+K).map(one));if(!PX||!PX.busy){if(inp)inp.value='';return}PX.busy=`${done} / ${N}`;const q=$('#pxb');if(q)q.textContent=PX.busy}
  if(inp)inp.value='';pxSuggest(pts,N)}
 /* lab: lines of "lat,lon,date" from the clipboard, as written by a Shortcut on iPhone; lines without a place are counted but skipped */
-function pxText(txt){const pts=[];let n=0;String(txt).split(/\r?\n/).forEach(l=>{if(!l.trim())return;n++;const m=l.match(/(-?\d{1,2}\.\d+)[^\d-]{1,12}(-?\d{1,3}\.\d+)/);if(!m)return;const la=+m[1],lo=+m[2];if(Math.abs(la)>90||Math.abs(lo)>180)return;const d=l.slice(m.index+m[0].length).match(/(\d{4})[-\/.年](\d{1,2})[-\/.月](\d{1,2})/);pts.push({lat:la,lon:lo,d:d?`${d[1]}-${d[2].padStart(2,'0')}-${d[3].padStart(2,'0')}`:''})});return{pts,n}}
+function pxText(txt){const pts=[];let n=0;String(txt).split(/\r?\n/).forEach(l=>{if(!l.trim())return;n++;const m=l.match(/(-?\d{1,2}\.\d+)[^\d-]{1,12}(-?\d{1,3}\.\d+)/);if(!m)return;const la=+m[1],lo=+m[2];if(Math.abs(la)>90||Math.abs(lo)>180)return;const d=l.slice(m.index+m[0].length).match(/(\d{4})[-\/.年](\d{1,2})[-\/.月](\d{1,2})日?(?:[ T]+(\d{1,2}):(\d{2})(?::(\d{2}))?)?/);pts.push({lat:la,lon:lo,d:d?`${d[1]}-${d[2].padStart(2,'0')}-${d[3].padStart(2,'0')}`:'',t:d&&d[4]?`${d[4].padStart(2,'0')}:${d[5]}:${d[6]||'00'}`:''})});return{pts,n}}
 /* cities within 40km, best first: near counts, and so does size, so a photo in a district goes to its city while a small town of its own keeps its name; a city already visited is preferred */
 function pxNear(G,la,lo){const a=Math.floor(la*2),b=Math.floor(lo*2),w=Math.min(8,Math.ceil(1/Math.max(.12,Math.cos(la*Math.PI/180)))),P=[0,0,0,la,lo],out=[];
  for(let i=-1;i<=1;i++)for(let j=-w;j<=w;j++){let nb=b+j;if(nb<-360)nb+=720;else if(nb>359)nb-=720;const cell=G.get((a+i)*1000+nb);if(!cell)continue;for(const c of cell){if(NC.has(c[0])&&!S.v[c[0]])continue;const d=hav(P,c);if(d<=40)out.push([c,d-5*Math.log10(Math.max(c[5]||0,100))-(S.v[c[0]]?6:0)])}}
  return out.sort((x,y)=>x[1]-y[1]).slice(0,4).map(x=>x[0])}
 function pxSuggest(pts,total){if(!FULL){whenFull(()=>pxSuggest(pts,total));return}const G=new Map;for(const c of C){if(!Number.isFinite(c[3])||!Number.isFinite(c[4]))continue;const k=Math.floor(c[3]*2)*1000+Math.floor(c[4]*2);let g=G.get(k);if(!g)G.set(k,g=[]);g.push(c)}
- const memo=new Map,by=new Map,day=864e5,T0=today();
+ const memo=new Map,by=new Map,day=864e5,T0=today(),PXT=new Map;
  const rb0=S.set.home!=null&&byId.get(S.set.home);
  for(const p of pts){const at=[0,0,0,p.lat,p.lon],hb=baseAt(p.d||T0);if((hb&&hav(hb,at)<30)||(rb0&&hav(rb0,at)<30))continue;const k=Math.round(p.lat*100)+','+Math.round(p.lon*100);let cs=memo.get(k);if(!cs)memo.set(k,cs=pxNear(G,p.lat,p.lon));if(!cs.length)continue;
-  let r=by.get(cs[0][0]);if(!r)by.set(cs[0][0],r={cands:cs,days:new Set});if(p.d)r.days.add(p.d)}
+  let r=by.get(cs[0][0]);if(!r)by.set(cs[0][0],r={cands:cs,days:new Set});if(p.d)r.days.add(p.d);if(p.d&&p.t){let m=PXT.get(p.d);if(!m)PXT.set(p.d,m=new Map);const k0=cs[0][0];if(!m.has(k0)||p.t<m.get(k0))m.set(k0,p.t)}}
  const rows=[];let grew=false;for(const r of by.values()){const cur=S.v[r.cands[0][0]],iv=(cur?adates(cur):[]).map(d=>[Date.parse(d),Date.parse(cur.e&&cur.e[d]>d?cur.e[d]:d),d]),ds=[],st={};let run=[];
   /* photo days no more than two days apart count as one visit, dated by its first day. A run that touches a recorded visit (its first day to its last photo day, two days either side) belongs to that visit: nothing is suggested, and the visit's last day moves on if the run goes further */
   const flush=()=>{if(!run.length)return;const z=run[run.length-1],a=Date.parse(run[0]),b=Date.parse(z),h=iv.find(q=>a<=q[1]+2*day&&b>=q[0]-2*day);if(h){if(b>h[1]){h[1]=b;(cur.e=cur.e||{})[h[2]]=z;grew=true}}else{ds.push(run[0]);if(b>a)st[run[0]]=z}run=[]};[...r.days].sort().forEach(d=>{if(run.length&&Date.parse(d)-Date.parse(run[run.length-1])>2*day)flush();run.push(d)});flush();
   if(cur&&!ds.length)continue;rows.push({on:true,ci:0,cands:r.cands,ds,st})}
  if(grew)save();
- rows.sort((x,y)=>(x.ds[0]||'9')<(y.ds[0]||'9')?-1:1);PX={rows,total,geo:pts.length};if(T==='set'){render();el.scrollTop=0}}
-function pxApply(){const rows=PX.rows.filter(r=>r.on),snap=JSON.stringify([S.v,S.w]);rows.forEach(r=>{const id=r.cands[r.ci][0],cur=S.v[id],all=[...new Set([...(cur?adates(cur):[]),...r.ds])].sort();S.v[id]=Object.assign(cur||{n:''},{d:all[0]||'',x:all.slice(1)});if(r.st&&Object.keys(r.st).length)S.v[id].e=Object.assign(S.v[id].e||{},r.st);delete S.w[id]});
- PX=null;save();touch();render();if(rows.length)toast(tr(`已添加 ${rows.length} 个城市`,`Added ${rows.length} ${rows.length>1?'cities':'city'}`),()=>{[S.v,S.w]=JSON.parse(snap);save();touch();render()})}
+ rows.sort((x,y)=>(x.ds[0]||'9')<(y.ds[0]||'9')?-1:1);PX={rows,total,geo:pts.length,tm:PXT};if(T==='set'){render();el.scrollTop=0}}
+function pxApply(){const rows=PX.rows.filter(r=>r.on),snap=JSON.stringify([S.v,S.w,S.od]);rows.forEach(r=>{const id=r.cands[r.ci][0],cur=S.v[id],all=[...new Set([...(cur?adates(cur):[]),...r.ds])].sort();S.v[id]=Object.assign(cur||{n:''},{d:all[0]||'',x:all.slice(1)});if(r.st&&Object.keys(r.st).length)S.v[id].e=Object.assign(S.v[id].e||{},r.st);delete S.w[id]});
+ /* a day with photos in several places: they were reached in the order the photos were taken, unless the user has already set that day */
+ if(PX.tm){const pick=new Map(rows.map(r=>[r.cands[0][0],r.cands[r.ci][0]]));S.od=S.od||{};for(const[d,m]of PX.tm){if(S.od[d])continue;const t=new Map;for(const[k,tt]of m){const i=pick.get(k)||k;if(S.v[i]&&adates(S.v[i]).includes(d)&&(!t.has(i)||tt<t.get(i)))t.set(i,tt)}if(t.size>1)S.od[d]=[...t].sort((a,b)=>a[1]<b[1]?-1:1).map(x=>x[0])}}
+ PX=null;save();touch();render();if(rows.length)toast(tr(`已添加 ${rows.length} 个城市`,`Added ${rows.length} ${rows.length>1?'cities':'city'}`),()=>{[S.v,S.w,S.od]=JSON.parse(snap);save();touch();render()})}
 const PXSC='https://www.icloud.com/shortcuts/d25acde971034449aa387938ac416a25',pxDev=()=>{const ua=navigator.userAgent;return/Android/.test(ua)?'and':/iPhone|iPad|iPod/.test(ua)||(/Mac/.test(ua)&&navigator.maxTouchPoints>1)?'ios':'pc'};
 function pxGuide(){const dev=pxDev(),
  d=(k,t,ps)=>`<details class="dfmt"${k===dev?' open':''}><summary>${t}</summary>${ps.map(x=>`<p>${x}</p>`).join('')}</details>`,
@@ -1137,14 +1289,15 @@ function doImport(text,fname,replace){const r=doImport0(text,fname,replace);norm
 function doImport0(text,fname,replace){text=String(text).replace(/^\uFEFF/,'');const isCSV=/\.csv$/i.test(fname||'')||!/^\s*[\{\[]/.test(text);
  if(isCSV){const r=importList(fromCSV(text),replace);IMSG=impMsg(r);return r}
  const d=JSON.parse(text);
- if(d.format===2&&Array.isArray(d.cities)){if(replace&&d.settings)applySettings(d.settings);if(d.pc){S.pc=Object.assign(S.pc,{from:d.pc.from||S.pc.from,style:d.pc.style||S.pc.style,sent:Math.max(S.pc.sent||0,d.pc.sent||0)});if(Array.isArray(d.pc.log)&&!S.pc.log.length)pcLogIn=d.pc.log}const r=importList(d.cities,replace);if(pcLogIn){S.pc.log=pcLogIn.map(e=>{const h=findCity({name:e.name,cc:ccByName(e.country)});return h?{id:h[0],st:e.st,nl:e.nl,to:e.to,msg:e.msg,from:e.from,date:e.date,ox:e.ox,oy:e.oy,at:e.at,...PCLOOK(e)}:null}).filter(Boolean);pcLogIn=null;save()}if(replace){if(d.home){const h=findCity({name:d.home.name,cc:ccByName(d.home.country)});if(h)S.set.home=h[0]}if(Array.isArray(d.bp)){S.bp=d.bp.map(p=>{const h=findCity({name:p.name,cc:ccByName(p.country)});return h?{id:h[0],from:p.from,to:p.to||null}:null}).filter(Boolean).sort((x,y)=>x.from<y.from?-1:x.from>y.from?1:0)}save()}IMSG=impMsg(r);return r}
+ if(d.format===2&&Array.isArray(d.cities)){if(replace&&d.settings)applySettings(d.settings);if(d.pc){S.pc=Object.assign(S.pc,{from:d.pc.from||S.pc.from,style:d.pc.style||S.pc.style,sent:Math.max(S.pc.sent||0,d.pc.sent||0)});if(Array.isArray(d.pc.log)&&!S.pc.log.length)pcLogIn=d.pc.log}const r=importList(d.cities,replace);if(pcLogIn){S.pc.log=pcLogIn.map(e=>{const h=findCity({name:e.name,cc:ccByName(e.country)});return h?{id:h[0],st:e.st,nl:e.nl,to:e.to,msg:e.msg,from:e.from,date:e.date,ox:e.ox,oy:e.oy,at:e.at,...PCLOOK(e)}:null}).filter(Boolean);pcLogIn=null;save()}if(isObj(d.od)){if(replace)S.od={};S.od=S.od||{};for(const k in d.od){if(!isDay(k)||!Array.isArray(d.od[k])||(S.od[k]&&!replace))continue;const a=d.od[k].map(p=>{const h=p&&findCity({name:p.name,cc:ccByName(p.country)});return h?h[0]:null}).filter(x=>x!=null);if(a.length>1)S.od[k]=a}save()}if(replace){if(d.home){const h=findCity({name:d.home.name,cc:ccByName(d.home.country)});if(h)S.set.home=h[0]}if(Array.isArray(d.bp)){S.bp=d.bp.map(p=>{const h=findCity({name:p.name,cc:ccByName(p.country)});return h?{id:h[0],from:p.from,to:p.to||null}:null}).filter(Boolean).sort((x,y)=>x.from<y.from?-1:x.from>y.from?1:0)}save()}IMSG=impMsg(r);return r}
  if(d.v){S=d;norm();save();IMSG=tr('已导入旧版备份','Imported legacy backup');return{ok:Object.keys(S.v).length,miss:[]}}
  throw new Error('format')}
 function toJSON(){const cities=[];const put=(c,v)=>{const o={name:c[1],country:c[2]};const z=ZH[c[0]];if(z)o.name_zh=z;o.lat=+c[3].toFixed(4);o.lon=+c[4].toFixed(4);
  if(v){const ds=adates(v);if(ds.length)o.visits=ds;if(v.n)o.notes=v.n;if(v.ic)o.scene=v.ic;if(v.e)o.stays=v.e;if(v.img)o.image=v.img}else o.wishlist=true;cities.push(o)};
  VLA.forEach(c=>put(c,S.v[c[0]]));WL.forEach(c=>put(c,null));
  const st={};SKEYS.forEach(k=>st[k]=S.set[k]);const out={app:'fernweh',format:2,exported:new Date().toISOString(),count:cities.length,cities,settings:st};
- out.pc={from:S.pc.from,style:S.pc.style,sent:S.pc.sent,log:(S.pc.log||[]).map(e=>{const c=byId.get(e.id);return c?{name:c[1],country:c[2],st:e.st,nl:e.nl,to:e.to,msg:e.msg,from:e.from,date:e.date,ox:e.ox,oy:e.oy,at:e.at,...PCLOOK(e)}:null}).filter(Boolean)};out.bp=(S.bp||[]).map(p=>{const c=byId.get(p.id);return c?{name:c[1],country:c[2],from:p.from,to:p.to||null}:null}).filter(Boolean);const hc=S.set.home!=null?byId.get(S.set.home):null;if(hc)out.home={name:hc[1],country:hc[2]};
+ out.pc={from:S.pc.from,style:S.pc.style,sent:S.pc.sent,log:(S.pc.log||[]).map(e=>{const c=byId.get(e.id);return c?{name:c[1],country:c[2],st:e.st,nl:e.nl,to:e.to,msg:e.msg,from:e.from,date:e.date,ox:e.ox,oy:e.oy,at:e.at,...PCLOOK(e)}:null}).filter(Boolean)};const od={};for(const d in S.od||{}){const a=S.od[d].map(i=>byId.get(i)).filter(Boolean).map(c=>({name:c[1],country:c[2]}));if(a.length>1)od[d]=a}if(Object.keys(od).length)out.od=od;
+ out.bp=(S.bp||[]).map(p=>{const c=byId.get(p.id);return c?{name:c[1],country:c[2],from:p.from,to:p.to||null}:null}).filter(Boolean);const hc=S.set.home!=null?byId.get(S.set.home):null;if(hc)out.home={name:hc[1],country:hc[2]};
  return JSON.stringify(out,null,1)}
 function toCSV(){const q=s=>'"'+String(s==null?'':s).replace(/"/g,'""')+'"';const r=['name,name_zh,country,lat,lon,visits,notes,status'];
  const row=(c,v)=>r.push([c[1],ZH[c[0]]||'',c[2],c[3].toFixed(4),c[4].toFixed(4),v?adates(v).join(';'):'',v?v.n||'':'',v?'visited':'wishlist'].map(q).join(','));
@@ -1155,8 +1308,10 @@ switch(a){case'open':open(+v);break;case'back':closeDetail();break;
 case'mark':S.v[SEL]={d:today(),n:''};delete S.w[SEL];save();touch();render();break;
 case'wish':if(S.w[SEL])delete S.w[SEL];else S.w[SEL]=1;save();touch();render();break;
 case'dadd':{const vv=S.v[SEL],ar=adates(vv);if(ar.includes(today())){DNEW=SEL;render();const i=el.querySelector(`[data-di="${ar.length}"]`);if(i&&i.showPicker)try{i.showPicker()}catch(_){}}else{setDates(vv,[...ar,today()]);render()}break}
+case'dord':{const k=SEL+'|'+v;DORD=DORD===k?null:k;keep(render);break}
+case'dordr':{if(S.od)delete S.od[v];save();touch();keep(render);break}
 case'ddel':{const vv=S.v[SEL],ar=adates(vv);if(+v>=ar.length){DNEW=null;render();break}if(ar.length<2){if(confirm(tr('删除这条足迹？','Delete this footprint?'))){delete S.v[SEL];SEL=null;save();touch();render()}break}ar.splice(+v,1);setDates(vv,ar);render();break}
-case'up':$('#fi').click();break;case'rst':{const id=SEL,old=S.v[id].img;delete S.v[id].img;save();render();toast(tr('已换回内置照片','Built-in photo is back'),()=>{if(S.v[id]){S.v[id].img=old;save();render()}});break}
+case'up':$('#fi').click();break;case'rst':{const id=SEL,old=S.v[id].img;delete S.v[id].img;save();render();toast(bpSrc(id)&&S.set.photo!=='off'?tr('已换回内置照片','Built-in photo is back'):tr('已移除照片','Photo removed'),()=>{if(S.v[id]){S.v[id].img=old;save();render()}});break}
 case'del':if(confirm(tr('删除这条足迹？','Delete this footprint?'))){delete S.v[SEL];SEL=null;save();touch();render()}break;
 case'set':setv(k,v);break;case'tg':S.set[k]=!S.set[k];save();touch();keep(render);break;case'base':setBase(v);break;
 case'fv':FV[k]=v;pcvSync();vFoot();break;case'fold':S.set.fold[k]=!fo(k,g.dataset.d==='1');save();keep(render);break;case'qtog':{const on=QF||!!Q.trim();QF=!on;if(on)Q='';vMap();el.scrollTop=0;if(on){const i=el.querySelector('.qh .qadd svg');if(i)i.style.animation='qout .22s ease-out'}if(QF&&!mob()){const f=$('#q');if(f)f.focus()}break}
@@ -1184,7 +1339,7 @@ case'cdel':cuDel(v!=null?+v:SEL);break;
 case'cty':CTY=v;render();el.scrollTop=0;break;case'ctyx':CTY='';render();el.scrollTop=0;break;
 case'demo':DEMO?demoExit():demoStart();break;case'qimp':TABS[T]=0;T='set';SP='data';SEL=null;BACK=null;render();el.scrollTop=0;req();break;case'pc':pcOpen(SEL);break;case'pc2':pcOpen(+v);break;case'replay':rpStart();break;
 case'insp':inspPick(true);keep(vFoot);break;case'inspw':S.w[+v]=1;save();touch();inspPick(true);keep(vFoot);break;case'pclog':{const e2=S.pc.log[+v];if(e2)pcOpen(e2.id,e2);break}case'pcdel':{const i=+v,e2=S.pc.log[i];if(!e2)break;S.pc.log.splice(i,1);save();keep(render);toast(tr('已删除这张明信片','Postcard removed'),()=>{S.pc.log.splice(Math.min(i,S.pc.log.length),0,e2);save();if(T==='foot'&&SEL==null)keep(render)});break}case'bks':{const d=new Date(Date.now()+12096e5);S.set.bkSnooze=d.toISOString().slice(0,10);save();render();break}}};
-el.onchange=e=>{const t=e.target;if(t.id==='fpx'||t.id==='fpd'){const fs=[...t.files];if(fs.length)pxFiles(fs,t);else t.value='';return}if(t.dataset.pxc!=null){PX.rows[+t.dataset.pxc].ci=+t.value;return}if(t.dataset.di!=null){DNEW=null;const vv=S.v[SEL],ar=adates(vv).slice();while(ar.length<=+t.dataset.di)ar.push('');ar[+t.dataset.di]=t.value;setDates(vv,ar.filter((d,i)=>d||i===0));return}
+el.onchange=e=>{const t=e.target;if(t.id==='fpx'||t.id==='fpd'){const fs=[...t.files];if(fs.length)pxFiles(fs,t);else t.value='';return}if(t.dataset.pxc!=null){PX.rows[+t.dataset.pxc].ci=+t.value;return}if(t.dataset.di!=null){DNEW=null;const vv=S.v[SEL],ar=adates(vv).slice();while(ar.length<=+t.dataset.di)ar.push('');ar[+t.dataset.di]=t.value;setDates(vv,ar.filter((d,i)=>d||i===0));const sp=t.previousElementSibling,r=t.closest('.tli');if(sp)sp.textContent=dfm(t.value);if(r)r.classList.toggle('fut',t.value>TDY);return}
 if(t.id==='fi'){const f=t.files[0];if(!f)return;const im=new Image;im.onload=()=>{const k=document.createElement('canvas'),sw=Math.min(im.width,im.height*4/3),sh=sw*3/4;k.width=480;k.height=360;k.getContext('2d').drawImage(im,(im.width-sw)/2,(im.height-sh)/2,sw,sh,0,0,480,360);let u=k.toDataURL('image/webp',.8);if(!/^data:image\/webp/.test(u))u=k.toDataURL('image/jpeg',.82);const id=SEL,old=S.v[id].img;S.v[id].img=u;URL.revokeObjectURL(im.src);save();render();if(old)toast(tr('已更换照片','Photo changed'),()=>{if(S.v[id]){S.v[id].img=old;save();render()}})};im.onerror=()=>{URL.revokeObjectURL(im.src);t.value='';toast(tr('无法读取这张照片','Cannot read this photo'))};im.src=URL.createObjectURL(f)}
 if(t.id==='fim'){const f=t.files[0];if(!f)return;const rep=!Object.keys(S.v).length&&!WL.length;f.text().then(s=>whenFull(()=>{try{doImport(s,f.name,rep);L=S.set.lang||L;applyTheme();touch();render()}catch(_){IMSG=tr('导入失败：文件格式不正确','Import failed: invalid file');render()}finally{t.value=''}}))}};
 el.oninput=e=>{const t=e.target;if(t.id==='nn'){S.v[SEL].n=t.value;saveSoon()}else if(CF&&/^cf(la|lo|n|c)$/.test(t.id)){cfRead();if(t.id==='cfn')CF.auto=null;if(t.id==='cfc'){CF.ccSet=1;const q=$('#cfcs');if(q)q.innerHTML=cfChips()}req()}else if(t.id==='gap'){S.set.gap=String(t.value);t.style.setProperty('--f',(gapN()-1)/14);$('#gapv').textContent=gapLbl();$('#gapt').textContent=gapTxt();saveSoon();touch()}};
@@ -1338,9 +1493,16 @@ function sdEnd(){if(!sd)return false;const on=sd.on,v=sd.v;sd=null;rootEl.classL
  t.addEventListener('pointerdown',e=>{if(!mob())return;sdStart(e.clientY);dragged=false});t.addEventListener('pointermove',e=>{if(!sd)return;sdMove(e.clientY);if(sd.on&&!t.hasPointerCapture(e.pointerId))t.setPointerCapture(e.pointerId)});t.addEventListener('pointerup',up);t.addEventListener('pointercancel',up);
  t.addEventListener('click',e=>{if(dragged){dragged=false;e.stopImmediatePropagation();return}if(mob()&&shs==='p')setSheet('h')},true)}
 /* list content: pulling up opens the sheet first, pulling down at the top closes it */
-{let pl=null;el.addEventListener('touchstart',e=>{pl=mob()&&e.touches.length===1&&!/^(TEXTAREA|SELECT)$/.test(e.target.tagName)?{y:e.touches[0].clientY,top:el.scrollTop<=0}:null},{passive:true});
+{let pl=null;el.addEventListener('touchstart',e=>{pl=mob()&&e.touches.length===1&&!/^(TEXTAREA|SELECT)$/.test(e.target.tagName)&&!(e.target.closest&&e.target.closest('[data-dh]'))?{y:e.touches[0].clientY,top:el.scrollTop<=0}:null},{passive:true});
  el.addEventListener('touchmove',e=>{if(!pl)return;const y=e.touches[0].clientY;if(sd){sdMove(y);if(e.cancelable)e.preventDefault();return}const d=y-pl.y;if(Math.abs(d)<3)return;if(e.cancelable&&((d>0&&pl.top)||(d<0&&shs!=='f'))){sdStart(pl.y);sdMove(y);e.preventDefault()}else pl=null},{passive:false});
  const end=()=>{pl=null;sdEnd()};el.addEventListener('touchend',end);el.addEventListener('touchcancel',end)}
+/* the day order editor: a row follows the finger, the others make room, the new order is kept on release */
+el.addEventListener('pointerdown',e=>{const h=e.target.closest&&e.target.closest('[data-dh]');if(!h)return;e.preventDefault();e.stopPropagation();const row=h.closest('.dor'),box=row.parentElement,rows=[...box.querySelectorAll('.dor')],i0=rows.indexOf(row),step=row.offsetHeight+6,y0=e.clientY;let to=i0;
+ try{h.setPointerCapture(e.pointerId)}catch(_){}row.classList.add('drag');
+ const mv=ev=>{const dy=ev.clientY-y0;to=Math.max(0,Math.min(rows.length-1,i0+Math.round(dy/step)));row.style.transform=`translateY(${dy}px)`;rows.forEach((r,k)=>{if(r!==row)r.style.transform=k>i0&&k<=to?`translateY(${-step}px)`:k<i0&&k>=to?`translateY(${step}px)`:''})};
+ const up=()=>{h.removeEventListener('pointermove',mv);h.removeEventListener('pointerup',up);h.removeEventListener('pointercancel',up);const ids=rows.map(r=>+r.dataset.id);ids.splice(to,0,ids.splice(i0,1)[0]);
+  if(to!==i0){S.od=S.od||{};S.od[box.dataset.d]=ids;save();touch()}keep(render)};
+ h.addEventListener('pointermove',mv);h.addEventListener('pointerup',up);h.addEventListener('pointercancel',up)});
 /* typing: open the sheet and keep the field above the on-screen keyboard */
 el.addEventListener('focusin',e=>{if(mob()&&/^(q|ff|nn|bpc|hmc|cfn|cfc|cfla|cflo)$/.test(e.target.id)){if(shs!=='f')setSheet('f');setTimeout(()=>e.target.scrollIntoView({block:'nearest'}),320)}});
 if(window.visualViewport){const vv=visualViewport,kb=()=>{const k=vv.scale>1.01?0:Math.max(0,Math.round(VH()-vv.height-vv.offsetTop)),n=fieldOn()&&k>80?k:0;if(n===KB)return;KB=n;rootEl.style.setProperty('--kb',n+'px');rootEl.classList.toggle('kb',n>0);layoutSheet()};vv.addEventListener('resize',kb);vv.addEventListener('scroll',kb);addEventListener('focusout',()=>setTimeout(kb,350));addEventListener('pageshow',kb);document.addEventListener('visibilitychange',()=>{if(!document.hidden)setTimeout(kb,150)})}
@@ -1365,7 +1527,9 @@ try{const y0=localStorage.getItem('fernweh.year');if(y0)YF=y0}catch(e){}
  const open=id=>{list=VL.filter(c=>photoOf(c)).map(c=>c[0]);if(!list.includes(id))list.unshift(id);ix=list.indexOf(id);lb.classList.add('on');show(id)};
  const close=()=>{lb.classList.remove('on');tk++;setTimeout(()=>{if(!lb.classList.contains('on')){im.removeAttribute('src');cap.innerHTML=''}},220)};
  const go=d=>{if(list.length<2)return;ix=(ix+d+list.length)%list.length;show(list[ix])};
- document.addEventListener('click',e=>{const t=e.target.closest&&e.target.closest('img.pic.big');if(t&&t.dataset.b&&photoOf(byId.get(+t.dataset.b)))open(+t.dataset.b)});
+ document.addEventListener('click',e=>{const t=e.target.closest&&e.target.closest('img.pic.big');if(t&&t.dataset.b){const id=+t.dataset.b;if(photoOf(byId.get(id)))open(id);else if(S.v[id]&&$('#fi'))$('#fi').click()}});
+ document.addEventListener('focusout',e=>{const t=e.target;if(t.matches&&t.matches('.tld input'))setTimeout(()=>{if(SEL!=null&&!(document.activeElement&&document.activeElement.matches('.tld input')))keep(render)},0)});
+ document.addEventListener('click',e=>{const t=e.target;if(t.matches&&t.matches('.tld input')&&t.showPicker&&!matchMedia('(pointer:coarse)').matches)try{t.showPicker()}catch(_){}});
  $('#lbm').onclick=()=>{const id=list[ix];close();pcOpen(id)};$('#lbx').onclick=close;$('#lbp').onclick=()=>go(-1);$('#lbq').onclick=()=>go(1);
  lb.addEventListener('click',e=>{if(e.target===lb||e.target===cap||e.target===hint)close()});
  im.addEventListener('dblclick',e=>{e.preventDefault();Z.s>1.01?reset():zoomAt(2.6,e.clientX,e.clientY)});
