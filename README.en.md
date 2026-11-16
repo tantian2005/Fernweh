@@ -16,10 +16,11 @@ Your data stays in your own browser. There is no account, and nothing is uploade
 - Set a base city and your trips are drawn as lines; choose how many days apart count as a return to base
 - Footprints from photos: the place and date are read from your photos, which never leave the device
 - Import and export as JSON or CSV
-- Stats: countries, provinces and states, distance and achievements; tap a flag to see one country
-- Virtual postcards and share cards
+- Stats: countries, progress through provinces and states (with the ones still to go), distance and achievements; tap a flag to see one country
+- Virtual postcards and share cards, including a year-in-review card
 - Trip replay and a demo mode
-- Chinese and English interface, light and dark themes; install it to your home screen, and what you have viewed works offline
+- A short guide on first launch: language, installing to the home screen or the computer, and your base city
+- Chinese and English interface, light and dark themes, a choice of date order; install it to your home screen, and what you have viewed works offline
 
 ## Run locally
 
