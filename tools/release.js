@@ -1,8 +1,11 @@
 /* Raise the version numbers before a release, so that browsers fetch what changed.
 
-     node tools/release.js            next version (0.19 -> 0.20)
-     node tools/release.js 0.25       a version you name
-     node tools/release.js --check    show what would change, write nothing
+     node tools/release.js patch      fixes and small changes      (1.0.0 -> 1.0.1)
+     node tools/release.js minor      new features                 (1.0.3 -> 1.1.0)
+     node tools/release.js major      a large change of the whole  (1.4.2 -> 2.0.0)
+     node tools/release.js 1.2.0      a version you name
+     node tools/release.js --check    show what would change, write nothing (add it to any of the above)
+   The level has to be given: decide it for each release from what changed, and tell the user. A version written as 1.0 counts as 1.0.0.
 
    What it does:
    - data/core.js, data/rest.js, data/photos.js: when a file differs from the last release, its ?v= number goes up by one
@@ -13,7 +16,8 @@
    Order when photos changed: push the photo repository first, wait for its site, then push this one. */
 const fs = require('fs'), path = require('path'), crypto = require('crypto');
 const root = path.join(__dirname, '..'), F = f => path.join(root, f), check = process.argv.includes('--check');
-const want = process.argv.slice(2).find(a => /^\d+\.\d+$/.test(a));
+const args = process.argv.slice(2), want = args.find(a => /^\d+\.\d+\.\d+$/.test(a)), level = args.find(a => /^(patch|minor|major)$/.test(a));
+if (!want && !level) { console.error('Give the level: patch, minor or major (or a version such as 1.2.0)'); process.exit(1) }
 const vfile = F('tools/versions.json'), V = fs.existsSync(vfile) ? JSON.parse(fs.readFileSync(vfile, 'utf8')) : {};
 let html = fs.readFileSync(F('fernweh.html'), 'utf8'), sw = fs.readFileSync(F('sw.js'), 'utf8');
 const log = [];
@@ -34,7 +38,8 @@ if (process.argv.includes('--record')) { fs.writeFileSync(vfile, JSON.stringify(
 
 const av = /const APPV='([\d.]+)',APPD='([\d-]+)'/.exec(html), cv = /const CACHE = 'fernweh-v(\d+)'/.exec(sw);
 if (!av || !cv) throw new Error('APPV or CACHE not found');
-const [maj, min] = av[1].split('.').map(Number), next = want || `${maj}.${String(min + 1).padStart(2, '0')}`;
+const [maj, min = 0, pat = 0] = av[1].split('.').map(Number),
+  next = want || (level === 'major' ? `${maj + 1}.0.0` : level === 'minor' ? `${maj}.${min + 1}.0` : `${maj}.${min}.${pat + 1}`);
 const d = new Date(), today = new Date(d - d.getTimezoneOffset() * 6e4).toISOString().slice(0, 10);
 html = html.replace(av[0], `const APPV='${next}',APPD='${today}'`);
 sw = sw.replace(cv[0], `const CACHE = 'fernweh-v${+cv[1] + 1}'`);

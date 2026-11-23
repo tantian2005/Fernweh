@@ -8,11 +8,11 @@ ROADMAP.md 记的是"做过什么、还要做什么"；这份记的是"怎么干
 
 ## 1. 现在的状态（先看这里）
 
-- **线上版本**：1.0（`fernweh-v33`），地址 <https://tantian2005.github.io/Fernweh/>。
+- **线上版本**：1.1.0（`fernweh-v34`），地址 <https://tantian2005.github.io/Fernweh/>。
 - 0.26 到 0.32 的内容都记在 ROADMAP.md 对应条目里（城市页重做、按钮四级、Fraunces 字体、第一次打开的引导、基地提醒、年度回顾、省州进度、日期顺序等）。
 - 大部分改动在电脑上验证过；iPhone 上用户确认过一部分（截图反馈），引导在 iPhone Safari 里的安装页、照片墙的加载速度还没确认。
 - 用户常在电脑上同时开两个标签页或已安装的窗口；两个版本同时打开时曾经互相写数据导致闪烁（0.31 修好），改存档格式时要想到这一点。
-- 照片仓库 `E:\fernweh-photos` 是干净的，和远端一致。
+- 照片仓库 `E:\00ClaudeWorkspace\Apps\fernweh-photos` 是干净的，和远端一致。
 
 ---
 
@@ -51,8 +51,8 @@ ROADMAP.md 记的是"做过什么、还要做什么"；这份记的是"怎么干
 
 | 本地路径 | 仓库 | 内容 |
 |---|---|---|
-| `E:\fernweh` | `Fernweh` | 程序和数据。Pages 从 `main` 根目录发布 |
-| `E:\fernweh-photos` | `fernweh-photos` | 城市照片（约 330MB），有自己的 Pages 站点 |
+| `E:\00ClaudeWorkspace\Apps\fernweh` | `Fernweh` | 程序和数据。Pages 从 `main` 根目录发布 |
+| `E:\00ClaudeWorkspace\Apps\fernweh-photos` | `fernweh-photos` | 城市照片（约 330MB），有自己的 Pages 站点 |
 
 主仓库里的文件：
 
@@ -78,7 +78,7 @@ ROADMAP.md 记的是"做过什么、还要做什么"；这份记的是"怎么干
 
    ```python
    import io
-   p='E:/fernweh/fernweh.html'
+   p='E:/00ClaudeWorkspace/Apps/fernweh/fernweh.html'
    s=io.open(p,encoding='utf-8',newline='').read()
    def rep(a,b,n=1):
        global s
@@ -111,7 +111,7 @@ ROADMAP.md 记的是"做过什么、还要做什么"；这份记的是"怎么干
 
 ### 本地测试
 
-1. 写 `E:\fernweh\.claude\launch.json`：
+1. 写 `E:\00ClaudeWorkspace\Apps\fernweh\.claude\launch.json`：
 
    ```json
    {"version":"0.0.1","configurations":[{"name":"fernweh","runtimeExecutable":"python","runtimeArgs":["-m","http.server","8765"],"port":8765}]}
@@ -128,8 +128,10 @@ ROADMAP.md 记的是"做过什么、还要做什么"；这份记的是"怎么干
 ### 发布
 
 ```bash
-node tools/release.js      # 提高版本号、缓存名、改动过的数据文件的 ?v=
+node tools/release.js patch   # 提高版本号、缓存名、改动过的数据文件的 ?v=
 ```
+
+版本号用 1.0.1 这样的三段式。每次发布前先判断这次是哪一级，并告诉用户：修问题和小改动用 `patch`（1.0.0 → 1.0.1），加了新功能用 `minor`（1.0.3 → 1.1.0），整体大改用 `major`（→ 2.0.0）。脚本不给级别会拒绝运行。
 
 然后提交、推送。推送后用 curl 轮询 `sw.js` 里的缓存名确认上线：
 
@@ -144,7 +146,7 @@ curl -s -A "FernwehDeployCheck/1.0" "https://tantian2005.github.io/Fernweh/sw.js
 
 ### 加照片（顺序不能反）
 
-1. `python tools/photos.py take 编号="文件名.jpg"`（单张，任意地区），或 `fetch → sheet → merge`（批量，目前只支持中国）。图片写进 `E:\fernweh-photos`。
+1. `python tools/photos.py take 编号="文件名.jpg"`（单张，任意地区），或 `fetch → sheet → merge`（批量，目前只支持中国）。图片写进 `E:\00ClaudeWorkspace\Apps\fernweh-photos`。
 2. **每批都要看图审核**：`sheet` 会生成拼图，用 Read 工具看，把不合格的编号传给 `merge` 去掉。
 3. `node tools/split-cities.js`，让有照片的城市进核心包。
 4. `python tools/photos.py credits` 更新照片仓库的署名表。
@@ -226,4 +228,4 @@ curl -s -A "FernwehDeployCheck/1.0" "https://tantian2005.github.io/Fernweh/sw.js
 
 - 每次改动的原因和取舍都写在 ROADMAP.md 对应的条目里，按版本号找。
 - 提交信息写得比较详细，`git log` 能看到每一版改了什么。
-- 记忆目录 `C:\Users\13816\.claude\projects\E--fernweh\memory\` 里有用户定的界面规则。
+- 记忆目录 `C:\Users\13816\.claude\projects\E--00ClaudeWorkspace-Apps-fernweh\memory\` 里有用户定的界面规则。
